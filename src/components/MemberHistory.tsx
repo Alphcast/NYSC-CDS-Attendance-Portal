@@ -50,13 +50,20 @@ export const MemberHistory: React.FC<MemberHistoryProps> = ({
     <div className="max-w-4xl mx-auto py-6 sm:py-8 px-4 space-y-6">
       {/* Title */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-stone-200">
-        <div>
-          <h1 className="text-xl sm:text-2xl font-bold text-stone-900 tracking-tight">
-            My CDS Attendance Records
-          </h1>
-          <p className="text-xs sm:text-sm text-stone-500 mt-1">
-            Personal attendance log, officer verification stamps, and approval tracking.
-          </p>
+        <div className="flex items-start gap-3.5">
+          <img
+            src="/nysc-logo.jpg"
+            alt="NYSC Member History"
+            className="w-12 h-12 rounded-full object-contain p-0.5 border border-amber-300/80 bg-white shadow-xs shrink-0 mt-0.5"
+          />
+          <div>
+            <h1 className="text-xl sm:text-2xl font-bold text-stone-900 tracking-tight">
+              My CDS Attendance Records
+            </h1>
+            <p className="text-xs sm:text-sm text-stone-500 mt-1">
+              Personal attendance log, officer verification stamps, and approval tracking.
+            </p>
+          </div>
         </div>
 
         <div className="flex items-center gap-2">

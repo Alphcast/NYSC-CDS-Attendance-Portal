@@ -136,17 +136,38 @@ export default function App() {
       </main>
 
       {/* Official NYSC Footer */}
-      <footer className="border-t border-stone-200 bg-white py-6 px-4 sm:px-6 mt-12">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
-          <div className="flex items-center gap-2">
-            <span className="font-bold text-stone-800">National Youth Service Corps (NYSC)</span>
-            <span>·</span>
-            <span>Community Development Service (CDS) Directorate</span>
+      <footer className="border-t border-stone-200 bg-white py-8 px-4 sm:px-6 mt-12">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Logo & NYSC Authority */}
+          <div className="flex items-center gap-3.5">
+            <img
+              src="/nysc-logo.jpg"
+              alt="National Youth Service Corps (NYSC) Emblem"
+              className="w-12 h-12 rounded-full object-contain p-0.5 border border-amber-300/80 bg-white shadow-xs shrink-0"
+            />
+            <div className="flex flex-col text-left">
+              <span className="font-bold text-stone-900 text-sm">
+                National Youth Service Corps (NYSC)
+              </span>
+              <span className="text-xs text-stone-500">
+                Community Development Service (CDS) Directorate · Osun State
+              </span>
+              <p className="text-[11px] text-stone-400 mt-0.5">
+                Service and Humility · Official Roll-Call & Attendance Verification System
+              </p>
+            </div>
           </div>
 
-          <p className="text-center sm:text-right text-[11px] text-stone-400">
-            Attendance is recognized as officially present only upon verified roll-call certification by an authorized CDS inspector.
-          </p>
+          {/* Developer Attribution & Notice */}
+          <div className="flex flex-col items-center md:items-end text-center md:text-right gap-1.5">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-stone-100 border border-stone-200/80 rounded-full text-xs text-stone-700 shadow-2xs">
+              <span className="text-stone-500">Developed by</span>
+              <span className="font-bold text-emerald-800 tracking-tight">Alphcast Technologies</span>
+            </div>
+            <p className="text-[11px] text-stone-400 max-w-md">
+              Attendance is recognized as officially present only upon verified roll-call certification by an authorized CDS inspector.
+            </p>
+          </div>
         </div>
       </footer>
     </div>

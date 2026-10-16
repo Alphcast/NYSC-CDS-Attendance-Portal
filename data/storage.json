@@ -74,21 +74,21 @@
       "cdsGroup": "ICT & Digital Skills",
       "meetingDate": "2026-10-16",
       "meetingNumber": 1,
-      "checkInTime": "2026-10-16T07:32:06.613Z",
+      "checkInTime": "2026-10-16T07:32:06.613+00:00",
       "status": "Approved",
       "approvedBy": {
-        "officerId": "usr_officer_osun",
-        "fullName": "CDS Verification Officer (Osogbo)",
         "role": "officer",
+        "fullName": "CDS Verification Officer (Osogbo)",
+        "officerId": "usr_officer_osun",
         "stateCode": "OS/24B/0088"
       },
-      "approvalTimestamp": "2026-10-16T07:34:54.908Z",
+      "approvalTimestamp": "2026-10-16T07:34:54.908+00:00",
       "meetingNotes": "Officer CDS Verification Officer (Osogbo) verified physical presence at CDS session.",
       "rejectionReason": null,
-      "createdAt": "2026-10-16T07:32:06.613Z",
-      "updatedAt": "2026-10-16T07:34:54.908Z",
       "rejectedBy": null,
-      "rejectionTimestamp": null
+      "rejectionTimestamp": null,
+      "createdAt": "2026-10-16T07:34:54.998581+00:00",
+      "updatedAt": "2026-10-16T07:34:54.91+00:00"
     }
   ],
   "meetings": [
@@ -273,6 +273,44 @@
       "meetingNumber": null,
       "cdsGroup": "Test Verification Group 1792135856357",
       "timestamp": "2026-10-16T07:30:56.361+00:00"
+    },
+    {
+      "id": "audit_1792137004129_49ws",
+      "action": "BOX_ATTENDANCE_MARKED",
+      "performedBy": {
+        "id": "usr_officer_osun",
+        "role": "officer",
+        "fullName": "CDS Verification Officer (Osogbo)",
+        "stateCode": "OS/24B/0088"
+      },
+      "targetMember": {
+        "fullName": "Oladepo Rokeeb Olayinka",
+        "stateCode": "OS/24B/1042"
+      },
+      "details": "Removed attendance mark for CDS Meeting #3 for Oladepo Rokeeb Olayinka (OS/24B/1042).",
+      "meetingDate": "2026-10-16",
+      "meetingNumber": 3,
+      "cdsGroup": "ICT & Digital Skills",
+      "timestamp": "2026-10-16T07:50:04.129+00:00"
+    },
+    {
+      "id": "audit_1792136992295_sts3",
+      "action": "BOX_ATTENDANCE_MARKED",
+      "performedBy": {
+        "id": "usr_officer_osun",
+        "role": "officer",
+        "fullName": "CDS Verification Officer (Osogbo)",
+        "stateCode": "OS/24B/0088"
+      },
+      "targetMember": {
+        "fullName": "Oladepo Rokeeb Olayinka",
+        "stateCode": "OS/24B/1042"
+      },
+      "details": "Marked present for CDS Meeting #3 for Oladepo Rokeeb Olayinka (OS/24B/1042) in ICT & Digital Skills.",
+      "meetingDate": "2026-10-16",
+      "meetingNumber": 3,
+      "cdsGroup": "ICT & Digital Skills",
+      "timestamp": "2026-10-16T07:49:52.295+00:00"
     }
   ],
   "notifications": [
@@ -318,13 +356,23 @@
       "1": {
         "meetingNumber": 1,
         "attended": true,
-        "markedAt": "2026-10-16T07:37:35.519Z",
+        "markedAt": "2026-10-16T07:37:35.519+00:00",
         "markedBy": "CDS Verification Officer (Osogbo) (officer)",
         "meetingDate": "2026-10-16"
       },
       "2": {
         "meetingNumber": 2,
-        "attended": false
+        "attended": true,
+        "markedAt": "2026-10-16T07:35:16.797+00:00",
+        "markedBy": "CDS Verification Officer (Osogbo) (officer)",
+        "meetingDate": "2026-10-16"
+      },
+      "3": {
+        "meetingNumber": 3,
+        "attended": true,
+        "markedAt": "2026-10-16T07:49:52.295+00:00",
+        "markedBy": "CDS Verification Officer (Osogbo) (officer)",
+        "meetingDate": "2026-10-16"
       }
     },
     "OS/24B/3373": {

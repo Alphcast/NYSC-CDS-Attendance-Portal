@@ -100,8 +100,15 @@ export const CDSRegistration: React.FC<CDSRegistrationProps> = ({
 
   return (
     <div className="max-w-2xl mx-auto py-6 sm:py-10 px-4">
-      {/* Title */}
-      <div className="text-center mb-8">
+      {/* Title with Official NYSC Emblem */}
+      <div className="text-center mb-8 flex flex-col items-center">
+        <div className="relative mb-3">
+          <img
+            src="/nysc-logo.jpg"
+            alt="National Youth Service Corps (NYSC) Official Emblem"
+            className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-contain p-1 border-2 border-amber-400 bg-white shadow-md mx-auto hover:scale-105 transition-transform"
+          />
+        </div>
         <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 text-emerald-800 rounded-full text-xs font-semibold uppercase tracking-wider mb-2 border border-emerald-200">
           <UserPlus className="w-3.5 h-3.5 text-emerald-700" />
           <span>Official NYSC CDS Enrollment</span>
@@ -117,8 +124,15 @@ export const CDSRegistration: React.FC<CDSRegistrationProps> = ({
       {/* Done State Announcement */}
       {isDone && createdSheet && (
         <div className="mb-8 bg-emerald-50 border-2 border-emerald-500/80 rounded-2xl p-6 sm:p-8 shadow-sm text-center space-y-4 animate-in fade-in zoom-in duration-200">
-          <div className="w-16 h-16 bg-emerald-700 text-white rounded-2xl flex items-center justify-center mx-auto shadow-md">
-            <CheckCircle2 className="w-10 h-10" />
+          <div className="relative mx-auto w-20 h-20">
+            <img
+              src="/nysc-logo.jpg"
+              alt="NYSC Official Emblem"
+              className="w-20 h-20 rounded-full object-contain p-1 border-2 border-emerald-600 bg-white shadow-md"
+            />
+            <div className="absolute -bottom-1 -right-1 w-7 h-7 bg-emerald-700 text-white rounded-full flex items-center justify-center border-2 border-white shadow-xs">
+              <CheckCircle2 className="w-4 h-4" />
+            </div>
           </div>
 
           <div>

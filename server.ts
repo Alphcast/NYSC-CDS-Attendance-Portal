@@ -18,7 +18,13 @@ dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const PORT = parseInt(process.env.PORT || '3000', 10);
+const cliPort = (() => {
+  const args = process.argv.slice(2);
+  const pIdx = args.indexOf('--port');
+  return pIdx !== -1 && args[pIdx + 1] ? parseInt(args[pIdx + 1], 10) : null;
+})();
+
+const PORT = cliPort || (process.env.APP_PORT ? parseInt(process.env.APP_PORT, 10) : (process.env.PORT && process.env.PORT !== '8080' ? parseInt(process.env.PORT, 10) : 3000));
 const isProduction = process.env.NODE_ENV === 'production';
 
 async function startServer() {

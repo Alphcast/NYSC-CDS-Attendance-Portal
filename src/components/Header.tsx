@@ -25,16 +25,28 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-8 px-4 sm:px-6 py-3.5">
-        {/* Zone 1: Brand Wordmark (Single text element) */}
+        {/* Zone 1: Brand Wordmark with Real NYSC Logo */}
         <div className="flex items-center gap-3 shrink-0">
-          <div className="w-8 h-8 rounded-lg bg-emerald-800 text-white font-bold flex items-center justify-center text-xs tracking-wider shadow-xs">
-            NYSC
-          </div>
           <button
             onClick={() => setActiveTab('checkin')}
-            className="text-left font-bold tracking-tight text-stone-900 text-base sm:text-lg whitespace-nowrap shrink-0 hover:text-emerald-800 transition-colors"
+            className="group flex items-center gap-3 text-left focus:outline-none"
           >
-            NYSC CDS Attendance Portal
+            <div className="relative">
+              <img
+                src="/nysc-logo.jpg"
+                alt="NYSC Official Emblem"
+                className="w-10 h-10 rounded-full object-contain p-0.5 border border-amber-300/70 bg-white shadow-xs group-hover:scale-105 transition-transform"
+              />
+              <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-600 rounded-full border-2 border-white" title="Verified Portal" />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-bold tracking-tight text-stone-900 text-sm sm:text-base whitespace-nowrap group-hover:text-emerald-800 transition-colors">
+                NYSC CDS Attendance Portal
+              </span>
+              <span className="text-[10px] font-semibold text-emerald-800 tracking-wider uppercase">
+                Osun State Directorate
+              </span>
+            </div>
           </button>
         </div>
 

@@ -297,15 +297,25 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
     <div className="max-w-7xl mx-auto py-6 sm:py-8 px-4 sm:px-6 space-y-6">
       {/* Title */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-stone-200">
-        <div>
-          <div className="flex items-center gap-2">
-            <h1 className="text-xl sm:text-2xl font-bold text-stone-900 tracking-tight">
-              Administration, Audit Trail & Integrity Tests
-            </h1>
+        <div className="flex items-start gap-3.5">
+          <img
+            src="/nysc-logo.jpg"
+            alt="NYSC Administration"
+            className="w-12 h-12 rounded-full object-contain p-0.5 border border-amber-300/80 bg-white shadow-xs shrink-0 mt-0.5"
+          />
+          <div>
+            <div className="flex items-center gap-2 flex-wrap">
+              <h1 className="text-xl sm:text-2xl font-bold text-stone-900 tracking-tight">
+                Administration, Audit Trail & Integrity Tests
+              </h1>
+              <span className="text-[11px] uppercase tracking-wider font-bold px-2 py-0.5 rounded bg-purple-50 text-purple-800 border border-purple-200">
+                Inspector Console
+              </span>
+            </div>
+            <p className="text-xs sm:text-sm text-stone-500 mt-1">
+              Roster management, CSV import, CDS meeting scheduling, immutable audit log, and automated verification tests.
+            </p>
           </div>
-          <p className="text-xs sm:text-sm text-stone-500 mt-1">
-            Roster management, CSV import, CDS meeting scheduling, immutable audit log, and automated verification tests.
-          </p>
         </div>
 
         <div className="flex items-center gap-2">

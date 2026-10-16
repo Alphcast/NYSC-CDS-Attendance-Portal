@@ -131,18 +131,25 @@ export const OfficerDashboard: React.FC<OfficerDashboardProps> = ({
     <div className="max-w-7xl mx-auto py-6 sm:py-8 px-4 sm:px-6 space-y-6">
       {/* Top Banner & Security Status */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-stone-200">
-        <div>
-          <div className="flex items-center gap-2">
-            <h1 className="text-xl sm:text-2xl font-bold text-stone-900 tracking-tight">
-              Attendance Officer Dashboard
-            </h1>
-            <span className="text-[11px] uppercase tracking-wider font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200">
-              Verified Officer Desk
-            </span>
+        <div className="flex items-start gap-3.5">
+          <img
+            src="/nysc-logo.jpg"
+            alt="NYSC Officer Desk"
+            className="w-12 h-12 rounded-full object-contain p-0.5 border border-amber-300/80 bg-white shadow-xs shrink-0 mt-0.5"
+          />
+          <div>
+            <div className="flex items-center gap-2 flex-wrap">
+              <h1 className="text-xl sm:text-2xl font-bold text-stone-900 tracking-tight">
+                Attendance Officer Dashboard
+              </h1>
+              <span className="text-[11px] uppercase tracking-wider font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200">
+                Verified Officer Desk
+              </span>
+            </div>
+            <p className="text-xs sm:text-sm text-stone-500 mt-1">
+              Physical roll-call verification desk. Attendance is only marked official after physical presence confirmation.
+            </p>
           </div>
-          <p className="text-xs sm:text-sm text-stone-500 mt-1">
-            Physical roll-call verification desk. Attendance is only marked official after physical presence confirmation.
-          </p>
         </div>
 
         <div className="flex items-center gap-3">

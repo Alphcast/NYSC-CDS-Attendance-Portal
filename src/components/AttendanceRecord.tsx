@@ -196,18 +196,25 @@ export const AttendanceRecord: React.FC<AttendanceRecordProps> = ({
     <div className="max-w-[1550px] mx-auto py-6 sm:py-8 px-4 sm:px-6 space-y-6">
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-stone-200">
-        <div>
-          <div className="flex items-center gap-2">
-            <h1 className="text-xl sm:text-2xl font-bold text-stone-900 tracking-tight">
-              CDS Attendance Record (100 Meetings Sheet)
-            </h1>
-            <span className="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200">
-              Official NYSC Roster
-            </span>
+        <div className="flex items-start gap-3.5">
+          <img
+            src="/nysc-logo.jpg"
+            alt="NYSC Logo"
+            className="w-12 h-12 rounded-full object-contain p-0.5 border border-amber-300/80 bg-white shadow-xs shrink-0 mt-0.5"
+          />
+          <div>
+            <div className="flex items-center gap-2 flex-wrap">
+              <h1 className="text-xl sm:text-2xl font-bold text-stone-900 tracking-tight">
+                CDS Attendance Record (100 Meetings Sheet)
+              </h1>
+              <span className="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200">
+                Official NYSC Roster
+              </span>
+            </div>
+            <p className="text-xs sm:text-sm text-stone-500 mt-1">
+              Registered corps members split into their chosen CDS groups. Click any of the <strong>100 square boxes</strong> in front of a member's name to mark them present for that CDS meeting.
+            </p>
           </div>
-          <p className="text-xs sm:text-sm text-stone-500 mt-1">
-            Registered corps members split into their chosen CDS groups. Click any of the <strong>100 square boxes</strong> in front of a member's name to mark them present for that CDS meeting.
-          </p>
         </div>
 
         <div className="flex items-center gap-2">
