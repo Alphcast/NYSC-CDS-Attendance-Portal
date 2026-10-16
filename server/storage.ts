@@ -1,6 +1,5 @@
 import fs from 'fs';
 import path from 'path';
-import mongoose from 'mongoose';
 import {
   IAttendance,
   IAuditLog,
@@ -11,17 +10,20 @@ import {
   IUser
 } from './types.js';
 import {
-  AttendanceModel,
-  AuditLogModel,
-  MeetingModel,
-  NotificationModel,
-  UserModel
-} from './models/index.js';
-import {
   syncMemberToSupabase,
   syncBoxToSupabase,
   syncAttendanceToSupabase,
-  syncAllToSupabase
+  syncMeetingToSupabase,
+  syncAuditLogToSupabase,
+  syncNotificationToSupabase,
+  markNotificationReadInSupabase,
+  syncAllToSupabase,
+  fetchMembersFromSupabase,
+  fetchBoxesFromSupabase,
+  fetchAttendancesFromSupabase,
+  fetchMeetingsFromSupabase,
+  fetchAuditLogsFromSupabase,
+  fetchNotificationsFromSupabase
 } from './supabase.js';
 
 const DATA_DIR = path.resolve(process.cwd(), 'data');
@@ -289,7 +291,7 @@ class StorageEngine {
     meetingBoxes: {}
   };
 
-  private isMongoConnected = false;
+  private isSupabaseConnected = false;
 
   constructor() {
     this.init();
@@ -336,12 +338,12 @@ class StorageEngine {
     }
   }
 
-  public setMongoConnected(status: boolean) {
-    this.isMongoConnected = status;
+  public setSupabaseConnected(status: boolean) {
+    this.isSupabaseConnected = status;
   }
 
-  public isMongoDB(): boolean {
-    return this.isMongoConnected;
+  public isSupabase(): boolean {
+    return this.isSupabaseConnected;
   }
 
   private persist() {
@@ -820,6 +822,9 @@ class StorageEngine {
     this.store.attendances.unshift(newAttendance);
     this.persist();
 
+    // Mirror to Supabase 'attendances' table
+    syncAttendanceToSupabase(newAttendance).catch(() => {});
+
     return newAttendance;
   }
 
@@ -911,6 +916,10 @@ class StorageEngine {
     item.updatedAt = now;
 
     this.persist();
+
+    // Mirror to Supabase 'attendances' table
+    syncAttendanceToSupabase(item).catch(() => {});
+
     return item;
   }
 
@@ -927,6 +936,10 @@ class StorageEngine {
     };
     this.store.meetings.unshift(newMeeting);
     this.persist();
+
+    // Mirror to Supabase 'cds_meetings' table
+    syncMeetingToSupabase(newMeeting).catch(() => {});
+
     return newMeeting;
   }
 
@@ -984,6 +997,10 @@ class StorageEngine {
       this.store.auditLogs = this.store.auditLogs.slice(0, 500);
     }
     this.persist();
+
+    // Mirror to Supabase 'audit_logs' table
+    syncAuditLogToSupabase(newLog).catch(() => {});
+
     return newLog;
   }
 
@@ -1000,6 +1017,7 @@ class StorageEngine {
     if (notif) {
       notif.isRead = true;
       this.persist();
+      markNotificationReadInSupabase(id).catch(() => {});
     }
   }
 
@@ -1012,11 +1030,96 @@ class StorageEngine {
     };
     this.store.notifications.unshift(newNotif);
     this.persist();
+
+    // Mirror to Supabase 'notifications' table
+    syncNotificationToSupabase(newNotif).catch(() => {});
+
     return newNotif;
   }
 
   public async syncWithSupabase() {
-    return await syncAllToSupabase(this.store.users, this.store.meetingBoxes, this.store.attendances);
+    return await syncAllToSupabase(
+      this.store.users,
+      this.store.meetingBoxes,
+      this.store.attendances,
+      this.store.meetings,
+      this.store.auditLogs
+    );
+  }
+
+  public async syncFromSupabase() {
+    try {
+      const remoteMembers = await fetchMembersFromSupabase();
+      if (remoteMembers && remoteMembers.length > 0) {
+        for (const rm of remoteMembers) {
+          const idx = this.store.users.findIndex(u => u.stateCode.trim().toUpperCase() === rm.stateCode.trim().toUpperCase());
+          if (idx >= 0) {
+            this.store.users[idx] = rm;
+          } else {
+            this.store.users.push(rm);
+          }
+        }
+      }
+
+      const remoteBoxes = await fetchBoxesFromSupabase();
+      if (remoteBoxes && Object.keys(remoteBoxes).length > 0) {
+        for (const [code, boxes] of Object.entries(remoteBoxes)) {
+          if (!this.store.meetingBoxes[code]) {
+            this.store.meetingBoxes[code] = {};
+          }
+          Object.assign(this.store.meetingBoxes[code], boxes);
+        }
+      }
+
+      const remoteAttendances = await fetchAttendancesFromSupabase();
+      if (remoteAttendances && remoteAttendances.length > 0) {
+        for (const ra of remoteAttendances) {
+          const idx = this.store.attendances.findIndex(a =>
+            a.id === ra.id || (
+              a.stateCode.trim().toUpperCase() === ra.stateCode.trim().toUpperCase() &&
+              a.meetingDate === ra.meetingDate &&
+              a.cdsGroup.toLowerCase() === ra.cdsGroup.toLowerCase()
+            )
+          );
+          if (idx >= 0) {
+            this.store.attendances[idx] = ra;
+          } else {
+            this.store.attendances.push(ra);
+          }
+        }
+      }
+
+      const remoteMeetings = await fetchMeetingsFromSupabase();
+      if (remoteMeetings && remoteMeetings.length > 0) {
+        for (const rm of remoteMeetings) {
+          const idx = this.store.meetings.findIndex(m => m.id === rm.id);
+          if (idx >= 0) {
+            this.store.meetings[idx] = rm;
+          } else {
+            this.store.meetings.push(rm);
+          }
+        }
+      }
+
+      const remoteAuditLogs = await fetchAuditLogsFromSupabase();
+      if (remoteAuditLogs && remoteAuditLogs.length > 0) {
+        for (const log of remoteAuditLogs) {
+          if (!this.store.auditLogs.some(l => l.id === log.id)) {
+            this.store.auditLogs.push(log);
+          }
+        }
+      }
+
+      this.persist();
+      return {
+        users: this.store.users.length,
+        attendances: this.store.attendances.length,
+        meetings: this.store.meetings.length
+      };
+    } catch (err: any) {
+      console.warn('syncFromSupabase notice:', err.message);
+      return null;
+    }
   }
 
   public resetDemoData() {

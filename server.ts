@@ -45,6 +45,7 @@ async function startServer() {
     res.json({
       status: 'ok',
       service: 'NYSC CDS Attendance Management System',
+      database: 'Supabase PostgreSQL',
       timestamp: new Date().toISOString()
     });
   });
@@ -75,6 +76,20 @@ async function startServer() {
     }
   });
 
+  // Supabase Pull endpoint: pulls all records from Supabase into memory cache
+  app.post('/api/supabase/pull', async (_req, res) => {
+    try {
+      const { storage } = await import('./server/storage.js');
+      const result = await storage.syncFromSupabase();
+      res.json({
+        message: 'Pulled latest records from Supabase successfully.',
+        result
+      });
+    } catch (err: any) {
+      res.status(500).json({ error: err.message || 'Supabase pull failed.' });
+    }
+  });
+
   // Supabase Schema endpoint: returns the complete SQL schema text
   app.get('/api/supabase/schema', async (_req, res) => {
     const { getSupabaseSchemaSQL } = await import('./server/supabase.js');
@@ -102,7 +117,7 @@ async function startServer() {
   // Error handling middleware
   app.use((err: any, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
     console.error('Unhandled server error:', err);
-    res.status(500).json({
+    res.status(err.status || 500).json({
       error: err.message || 'Internal server error occurred.'
     });
   });

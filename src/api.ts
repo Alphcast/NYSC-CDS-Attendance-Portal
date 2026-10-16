@@ -268,5 +268,12 @@ export const api = {
     result: { membersSynced: number; boxesSynced: number; attendancesSynced: number; error?: string };
   }> {
     return request('/api/supabase/sync', { method: 'POST' });
+  },
+
+  async pullFromSupabase(): Promise<{
+    message: string;
+    result: any;
+  }> {
+    return request('/api/supabase/pull', { method: 'POST' });
   }
 };

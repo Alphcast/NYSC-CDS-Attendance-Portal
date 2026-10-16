@@ -131,6 +131,25 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
       });
   };
 
+  const [pullingSupabase, setPullingSupabase] = useState(false);
+
+  const handlePullSupabase = async () => {
+    try {
+      setPullingSupabase(true);
+      await api.pullFromSupabase();
+      setFeedback({
+        type: 'success',
+        text: 'Successfully refreshed local cache from Supabase PostgreSQL database!'
+      });
+      loadData();
+      if (onRefreshData) onRefreshData();
+    } catch (err: any) {
+      setFeedback({ type: 'error', text: `Pull from Supabase failed: ${err.message}` });
+    } finally {
+      setPullingSupabase(false);
+    }
+  };
+
   const handleSyncSupabase = async () => {
     try {
       setSyncingSupabase(true);
@@ -959,8 +978,8 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
                 <span className="text-emerald-800 font-semibold block">fxdfoylwulrijmwzxqnd</span>
               </div>
               <div>
-                <span className="text-stone-400 font-sans block text-[11px] mb-0.5">Publishable Key</span>
-                <span className="text-stone-700 truncate block">sb_publishable_P7KY...0oa</span>
+                <span className="text-stone-400 font-sans block text-[11px] mb-0.5">Anon Key & Service Role</span>
+                <span className="text-stone-700 truncate block">eyJhbGciOiJIUz...rWKk (Active)</span>
               </div>
             </div>
           </div>
@@ -1056,14 +1075,25 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
                   </p>
                 </div>
 
-                <button
-                  onClick={handleSyncSupabase}
-                  disabled={syncingSupabase}
-                  className="px-3.5 py-1.5 text-xs font-semibold text-white bg-emerald-800 hover:bg-emerald-900 rounded-lg transition-colors flex items-center gap-1.5 shadow-2xs whitespace-nowrap shrink-0 disabled:opacity-50 cursor-pointer"
-                >
-                  <RefreshCw className={`w-3.5 h-3.5 ${syncingSupabase ? 'animate-spin' : ''}`} />
-                  <span>{syncingSupabase ? 'Syncing...' : 'Sync All to Supabase'}</span>
-                </button>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={handlePullSupabase}
+                    disabled={pullingSupabase}
+                    className="px-3 py-1.5 text-xs font-semibold text-stone-700 bg-white hover:bg-stone-50 border border-stone-300 rounded-lg transition-colors flex items-center gap-1.5 shadow-2xs whitespace-nowrap shrink-0 disabled:opacity-50 cursor-pointer"
+                  >
+                    <RefreshCw className={`w-3.5 h-3.5 ${pullingSupabase ? 'animate-spin' : ''}`} />
+                    <span>{pullingSupabase ? 'Pulling...' : 'Pull from Supabase'}</span>
+                  </button>
+
+                  <button
+                    onClick={handleSyncSupabase}
+                    disabled={syncingSupabase}
+                    className="px-3.5 py-1.5 text-xs font-semibold text-white bg-emerald-800 hover:bg-emerald-900 rounded-lg transition-colors flex items-center gap-1.5 shadow-2xs whitespace-nowrap shrink-0 disabled:opacity-50 cursor-pointer"
+                  >
+                    <RefreshCw className={`w-3.5 h-3.5 ${syncingSupabase ? 'animate-spin' : ''}`} />
+                    <span>{syncingSupabase ? 'Syncing...' : 'Sync All to Supabase'}</span>
+                  </button>
+                </div>
               </div>
 
               <pre className="p-3.5 bg-stone-900 text-emerald-400 rounded-lg text-[11px] font-mono overflow-x-auto max-h-72 leading-relaxed">

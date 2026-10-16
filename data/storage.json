@@ -121,6 +121,75 @@
   ],
   "attendances": [
     {
+      "id": "att_1792133337759_49xo",
+      "fullName": "Automated Test Corps Member",
+      "stateCode": "TEST/7758/001",
+      "cdsGroup": "Test Verification Group 1792133337758",
+      "meetingDate": "2026-10-15",
+      "meetingNumber": 1,
+      "checkInTime": "2026-10-16T06:48:57.759Z",
+      "status": "Approved",
+      "approvedBy": {
+        "officerId": "usr_officer_test",
+        "fullName": "Test Verification Officer",
+        "role": "officer",
+        "stateCode": "LA/24B/0999"
+      },
+      "approvalTimestamp": "2026-10-16T06:48:57.761Z",
+      "meetingNotes": "Physical presence verified during automated test run.",
+      "rejectionReason": null,
+      "createdAt": "2026-10-16T06:48:57.759Z",
+      "updatedAt": "2026-10-16T06:48:57.761Z",
+      "rejectedBy": null,
+      "rejectionTimestamp": null
+    },
+    {
+      "id": "att_1792132643047_mqin",
+      "fullName": "Automated Test Corps Member",
+      "stateCode": "TEST/3047/001",
+      "cdsGroup": "Test Verification Group 1792132643047",
+      "meetingDate": "2026-10-15",
+      "meetingNumber": 1,
+      "checkInTime": "2026-10-16T06:37:23.047Z",
+      "status": "Approved",
+      "approvedBy": {
+        "officerId": "usr_officer_test",
+        "fullName": "Test Verification Officer",
+        "role": "officer",
+        "stateCode": "LA/24B/0999"
+      },
+      "approvalTimestamp": "2026-10-16T06:37:23.049Z",
+      "meetingNotes": "Physical presence verified during automated test run.",
+      "rejectionReason": null,
+      "createdAt": "2026-10-16T06:37:23.047Z",
+      "updatedAt": "2026-10-16T06:37:23.049Z",
+      "rejectedBy": null,
+      "rejectionTimestamp": null
+    },
+    {
+      "id": "att_1792131409990_4llj",
+      "fullName": "Automated Test Corps Member",
+      "stateCode": "TEST/9990/001",
+      "cdsGroup": "Test Verification Group 1792131409990",
+      "meetingDate": "2026-10-15",
+      "meetingNumber": 1,
+      "checkInTime": "2026-10-16T06:16:49.990Z",
+      "status": "Approved",
+      "approvedBy": {
+        "officerId": "usr_officer_test",
+        "fullName": "Test Verification Officer",
+        "role": "officer",
+        "stateCode": "LA/24B/0999"
+      },
+      "approvalTimestamp": "2026-10-16T06:16:49.991Z",
+      "meetingNotes": "Physical presence verified during automated test run.",
+      "rejectionReason": null,
+      "createdAt": "2026-10-16T06:16:49.990Z",
+      "updatedAt": "2026-10-16T06:16:49.991Z",
+      "rejectedBy": null,
+      "rejectionTimestamp": null
+    },
+    {
       "id": "att_1792103865376_wqpz",
       "fullName": "Automated Test Corps Member",
       "stateCode": "TEST/5376/001",
@@ -380,6 +449,60 @@
     }
   ],
   "auditLogs": [
+    {
+      "action": "ATTENDANCE_APPROVED",
+      "performedBy": {
+        "id": "usr_officer_test",
+        "fullName": "Test Verification Officer",
+        "role": "officer",
+        "stateCode": "LA/24B/0999"
+      },
+      "targetMember": {
+        "fullName": "Automated Test Corps Member",
+        "stateCode": "TEST/7758/001"
+      },
+      "details": "Officer verified physical presence and approved attendance for Automated Test Corps Member (TEST/7758/001) on 2026-10-15.",
+      "meetingDate": "2026-10-15",
+      "cdsGroup": "Test Verification Group 1792133337758",
+      "id": "audit_1792133337761_ar34",
+      "timestamp": "2026-10-16T06:48:57.761Z"
+    },
+    {
+      "action": "ATTENDANCE_APPROVED",
+      "performedBy": {
+        "id": "usr_officer_test",
+        "fullName": "Test Verification Officer",
+        "role": "officer",
+        "stateCode": "LA/24B/0999"
+      },
+      "targetMember": {
+        "fullName": "Automated Test Corps Member",
+        "stateCode": "TEST/3047/001"
+      },
+      "details": "Officer verified physical presence and approved attendance for Automated Test Corps Member (TEST/3047/001) on 2026-10-15.",
+      "meetingDate": "2026-10-15",
+      "cdsGroup": "Test Verification Group 1792132643047",
+      "id": "audit_1792132643050_ugd0",
+      "timestamp": "2026-10-16T06:37:23.050Z"
+    },
+    {
+      "action": "ATTENDANCE_APPROVED",
+      "performedBy": {
+        "id": "usr_officer_test",
+        "fullName": "Test Verification Officer",
+        "role": "officer",
+        "stateCode": "LA/24B/0999"
+      },
+      "targetMember": {
+        "fullName": "Automated Test Corps Member",
+        "stateCode": "TEST/9990/001"
+      },
+      "details": "Officer verified physical presence and approved attendance for Automated Test Corps Member (TEST/9990/001) on 2026-10-15.",
+      "meetingDate": "2026-10-15",
+      "cdsGroup": "Test Verification Group 1792131409990",
+      "id": "audit_1792131409991_0cvk",
+      "timestamp": "2026-10-16T06:16:49.991Z"
+    },
     {
       "action": "ATTENDANCE_APPROVED",
       "performedBy": {
@@ -688,6 +811,33 @@
         "meetingNumber": 1,
         "attended": true,
         "markedAt": "2026-10-15T22:37:45.378Z",
+        "markedBy": "Test Verification Officer (officer)",
+        "meetingDate": "2026-10-15"
+      }
+    },
+    "TEST/9990/001": {
+      "1": {
+        "meetingNumber": 1,
+        "attended": true,
+        "markedAt": "2026-10-16T06:16:49.991Z",
+        "markedBy": "Test Verification Officer (officer)",
+        "meetingDate": "2026-10-15"
+      }
+    },
+    "TEST/3047/001": {
+      "1": {
+        "meetingNumber": 1,
+        "attended": true,
+        "markedAt": "2026-10-16T06:37:23.049Z",
+        "markedBy": "Test Verification Officer (officer)",
+        "meetingDate": "2026-10-15"
+      }
+    },
+    "TEST/7758/001": {
+      "1": {
+        "meetingNumber": 1,
+        "attended": true,
+        "markedAt": "2026-10-16T06:48:57.761Z",
         "markedBy": "Test Verification Officer (officer)",
         "meetingDate": "2026-10-15"
       }
