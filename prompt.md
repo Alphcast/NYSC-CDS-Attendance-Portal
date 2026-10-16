@@ -15,7 +15,7 @@ Use the prompt and SQL script below inside your **Supabase Project SQL Editor** 
 > 5. `audit_logs` table for an immutable audit trail of registrations, check-in submissions, and officer approvals.
 > 6. `notifications` table for dispatching real-time in-app alerts to members.
 > 7. Enable Row Level Security (RLS) on all tables with public access policies for anon/authenticated roles.
-> 8. Insert initial seed data for officers and corps members with realistic Nigerian NYSC details."
+> 8. Configure clean database structure for Osun State corps members (state codes strictly starting with 'OS/'), with initial administrative verification officers and zero demo corpers so real corps member attendance can be inputted."
 
 ---
 
@@ -163,36 +163,17 @@ CREATE POLICY "Allow anon all audit_logs" ON public.audit_logs FOR ALL USING (tr
 DROP POLICY IF EXISTS "Allow anon all notifications" ON public.notifications;
 CREATE POLICY "Allow anon all notifications" ON public.notifications FOR ALL USING (true) WITH CHECK (true);
 
--- 10. Seed Initial NYSC Officers and Corps Members
+-- 10. Seed Initial NYSC Osun State Officers (Zero Demo Corpers - Ready for Real Data Entry)
 INSERT INTO public.members (id, full_name, state_code, email, role, cds_group, phone_number, batch, ppa)
 VALUES
-  ('usr_admin_1', 'Capt. Olusegun Adeyemi', 'LA/24B/0001', 'admin@nysc.gov.ng', 'admin', 'Executive Management', '+2348031234567', '2024 Batch B Stream 1', 'NYSC Lagos State Secretariat, Surulere'),
-  ('usr_officer_1', 'Fatima Aminu Bello', 'LA/24B/0188', 'officer.fatima@nysc.gov.ng', 'officer', 'Editorial & Publicity', '+2348029876543', '2024 Batch B Stream 1', 'Lagos State Ministry of Information, Alausa'),
-  ('usr_officer_2', 'Chukwuma David Okonkwo', 'LA/24B/0412', 'officer.chukwuma@nysc.gov.ng', 'officer', 'ICT & Digital Skills', '+2348055551234', '2024 Batch B Stream 1', 'Lagos State Science & Tech Board'),
-  ('usr_member_1', 'Ibrahim Oladepo Adeleke', 'LA/24B/1042', 'ibrahim.ade@nysc.gov.ng', 'member', 'Editorial & Publicity', '+2348140001122', '2024 Batch B Stream 1', 'Surulere Local Government Secondary School'),
-  ('usr_member_2', 'Ngozi Blessing Eze', 'LA/24B/1205', 'ngozi.eze@nysc.gov.ng', 'member', 'Editorial & Publicity', '+2348139998877', '2024 Batch B Stream 1', 'Federal High Court, Ikoyi'),
-  ('usr_member_3', 'Ayomide Victor Babatunde', 'LA/24B/1589', 'ayomide.v@nysc.gov.ng', 'member', 'ICT & Digital Skills', '+2348071122334', '2024 Batch B Stream 1', 'Union Bank of Nigeria, Marina'),
-  ('usr_member_4', 'Zainab Mohammed Danjuma', 'LA/24B/2011', 'zainab.d@nysc.gov.ng', 'member', 'FRSC Road Safety', '+2348098877665', '2024 Batch B Stream 1', 'Federal Ministry of Works, TBS'),
-  ('usr_member_5', 'Tariere Ebimobowei', 'LA/24B/2344', 'tariere.e@nysc.gov.ng', 'member', 'Medical & Health', '+2348165544332', '2024 Batch B Stream 1', 'General Hospital, Gbagada')
+  ('usr_admin_osun', 'NYSC Osun State CDS Inspector', 'OS/24B/0001', 'admin.osun@nysc.gov.ng', 'admin', 'Executive Management', '+2348030000001', '2024 Batch B Stream 1', 'NYSC Osun State Secretariat, Osogbo'),
+  ('usr_officer_osun', 'CDS Verification Officer (Osogbo)', 'OS/24B/0088', 'officer.osogbo@nysc.gov.ng', 'officer', 'Editorial & Publicity', '+2348020000088', '2024 Batch B Stream 1', 'Ministry of Youth & Sports, Osogbo')
 ON CONFLICT (state_code) DO NOTHING;
 
--- Seed Attendance Boxes for Members
-INSERT INTO public.attendance_boxes (state_code, meeting_number, attended, marked_by, meeting_date)
-VALUES
-  ('LA/24B/1205', 1, TRUE, 'Fatima Aminu Bello (Officer)', CURRENT_DATE),
-  ('LA/24B/1205', 2, TRUE, 'Fatima Aminu Bello (Officer)', CURRENT_DATE - INTERVAL '7 days'),
-  ('LA/24B/1205', 3, TRUE, 'Fatima Aminu Bello (Officer)', CURRENT_DATE - INTERVAL '14 days'),
-  ('LA/24B/1042', 1, TRUE, 'Fatima Aminu Bello (Officer)', CURRENT_DATE - INTERVAL '7 days'),
-  ('LA/24B/1589', 1, TRUE, 'Chukwuma David Okonkwo (Officer)', CURRENT_DATE),
-  ('LA/24B/2011', 1, TRUE, 'Capt. Olusegun Adeyemi (Admin)', CURRENT_DATE),
-  ('LA/24B/2344', 1, TRUE, 'Capt. Olusegun Adeyemi (Admin)', CURRENT_DATE)
-ON CONFLICT (state_code, meeting_number) DO UPDATE SET attended = EXCLUDED.attended;
-
--- Seed Scheduled CDS Meetings
+-- 11. Seed Scheduled CDS General Assembly in Osun State
 INSERT INTO public.cds_meetings (id, title, cds_group, date, meeting_number, start_time, end_time, venue, agenda)
 VALUES
-  ('meet_today_ep', 'Weekly CDS Meeting - Editorial & Publicity', 'Editorial & Publicity', CURRENT_DATE, 1, '08:00', '12:00', 'Surulere Local Government Hall, Lagos', 'Magazine editorial review and verified roll-call.'),
-  ('meet_today_ict', 'Weekly CDS Meeting - ICT & Digital Skills', 'ICT & Digital Skills', CURRENT_DATE, 1, '08:30', '12:30', 'Public Library ICT Hub, Yaba, Lagos', 'Digital literacy workshop and roll-call.')
+  ('meet_osun_cds', 'Weekly CDS General Assembly & Roll-Call', 'All', CURRENT_DATE, 1, '08:00', '12:00', 'NYSC Local Government Secretariat Hall, Osun State', 'Weekly CDS project execution, official roll-call, and attendance physical verification.')
 ON CONFLICT (id) DO NOTHING;
 
 -- Verification Query: Check that all 6 tables exist

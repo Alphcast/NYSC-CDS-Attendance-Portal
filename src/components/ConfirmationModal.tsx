@@ -4,7 +4,7 @@ import { AlertCircle, CheckCircle2, X } from 'lucide-react';
 interface ConfirmationModalProps {
   isOpen: boolean;
   title: string;
-  message: string;
+  message: React.ReactNode;
   confirmLabel?: string;
   cancelLabel?: string;
   isDestructive?: boolean;

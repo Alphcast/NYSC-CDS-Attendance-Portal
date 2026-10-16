@@ -28,11 +28,11 @@ export default function App() {
         setPersonas(personasRes.personas);
 
         const stored = getStoredUser();
-        if (stored) {
+        if (stored && stored.stateCode && stored.stateCode.startsWith('OS/')) {
           setCurrentUser(stored);
         } else if (personasRes.personas.length > 0) {
-          const defaultMember = personasRes.personas.find(p => p.role === 'member') || personasRes.personas[0];
-          const switchRes = await api.switchPersona(defaultMember.id);
+          const defaultOfficer = personasRes.personas.find(p => p.role === 'officer') || personasRes.personas[0];
+          const switchRes = await api.switchPersona(defaultOfficer.id);
           setCurrentUser(switchRes.user);
         }
       } catch (err) {

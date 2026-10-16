@@ -180,10 +180,17 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
   const handleRegisterMember = async (e: React.FormEvent) => {
     e.preventDefault();
     setFeedback(null);
+
+    const cleanCode = newMemberStateCode.trim().toUpperCase();
+    if (!cleanCode.startsWith('OS/')) {
+      setFeedback({ type: 'error', text: 'State Code must start with OS/ for Osun State (e.g. OS/24B/1001).' });
+      return;
+    }
+
     try {
       await api.register({
         fullName: newMemberName.trim(),
-        stateCode: newMemberStateCode.trim().toUpperCase(),
+        stateCode: cleanCode,
         email: newMemberEmail.trim(),
         cdsGroup: newMemberGroup,
         phoneNumber: newMemberPhone.trim(),
@@ -537,7 +544,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
                   required
                   value={newMemberStateCode}
                   onChange={e => setNewMemberStateCode(e.target.value.toUpperCase())}
-                  placeholder="e.g. LA/24B/3110"
+                  placeholder="e.g. OS/24B/1001 (Must start with OS/)"
                   className="w-full px-3 py-2 font-mono uppercase border border-stone-300 rounded-lg"
                 />
               </div>
@@ -707,7 +714,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
                   required
                   value={meetingVenue}
                   onChange={e => setMeetingVenue(e.target.value)}
-                  placeholder="e.g. Surulere LG Hall, Lagos"
+                  placeholder="e.g. NYSC Osogbo Zonal Office Hall, Osun State"
                   className="w-full px-3 py-2 border border-stone-300 rounded-lg"
                 />
               </div>

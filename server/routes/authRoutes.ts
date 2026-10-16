@@ -86,12 +86,19 @@ router.post('/register', async (req, res) => {
     return;
   }
 
-  const stateCodeRegex = /^[A-Z]{2}\/\d{2}[A-C]\/\d{3,5}$/i;
+  const stateCodeRegex = /^OS\/\d{2}[A-C]\/\d{3,5}$/i;
   const cleanCode = stateCode.trim().toUpperCase();
+
+  if (!cleanCode.startsWith('OS/')) {
+    res.status(400).json({
+      error: 'Invalid NYSC State Code. State Code must start with OS/ for Osun State (e.g. OS/24B/1042).'
+    });
+    return;
+  }
 
   if (!stateCodeRegex.test(cleanCode)) {
     res.status(400).json({
-      error: 'Invalid NYSC State Code format. Example of valid state code: LA/24B/1042 or FC/25A/0192'
+      error: 'Invalid NYSC State Code format. Expected format: OS/ Batch & Stream / Digits (e.g. OS/24B/1042).'
     });
     return;
   }

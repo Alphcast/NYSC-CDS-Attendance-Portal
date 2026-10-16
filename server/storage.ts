@@ -38,248 +38,61 @@ interface DatabaseStore {
   meetingBoxes: Record<string, Record<number, IMeetingBoxRecord>>; // key: stateCode
 }
 
-// Initial Seed Data with realistic Nigerian NYSC details
+// Clean Initial Setup for Osun State NYSC CDS Portal
 const INITIAL_USERS: IUser[] = [
   {
-    id: 'usr_admin_1',
-    fullName: 'Capt. Olusegun Adeyemi',
-    stateCode: 'LA/24B/0001',
-    email: 'admin@nysc.gov.ng',
+    id: 'usr_admin_osun',
+    fullName: 'NYSC Osun State CDS Inspector',
+    stateCode: 'OS/24B/0001',
+    email: 'admin.osun@nysc.gov.ng',
     role: 'admin',
     cdsGroup: 'Executive Management',
-    phoneNumber: '+2348031234567',
+    phoneNumber: '+2348030000001',
     batch: '2024 Batch B Stream 1',
-    ppa: 'NYSC Lagos State Secretariat, Surulere',
+    ppa: 'NYSC Osun State Secretariat, Osogbo',
     isVerified: true,
-    registeredAt: new Date(Date.now() - 30 * 86400000).toISOString(),
-    createdAt: new Date(Date.now() - 30 * 86400000).toISOString()
+    registeredAt: new Date().toISOString(),
+    createdAt: new Date().toISOString()
   },
   {
-    id: 'usr_officer_1',
-    fullName: 'Fatima Aminu Bello',
-    stateCode: 'LA/24B/0188',
-    email: 'officer.fatima@nysc.gov.ng',
+    id: 'usr_officer_osun',
+    fullName: 'CDS Verification Officer (Osogbo)',
+    stateCode: 'OS/24B/0088',
+    email: 'officer.osogbo@nysc.gov.ng',
     role: 'officer',
     cdsGroup: 'Editorial & Publicity',
-    phoneNumber: '+2348029876543',
+    phoneNumber: '+2348020000088',
     batch: '2024 Batch B Stream 1',
-    ppa: 'Lagos State Ministry of Information, Alausa',
+    ppa: 'Ministry of Youth & Sports, Osogbo',
     isVerified: true,
-    registeredAt: new Date(Date.now() - 28 * 86400000).toISOString(),
-    createdAt: new Date(Date.now() - 28 * 86400000).toISOString()
-  },
-  {
-    id: 'usr_officer_2',
-    fullName: 'Chukwuma David Okonkwo',
-    stateCode: 'LA/24B/0412',
-    email: 'officer.chukwuma@nysc.gov.ng',
-    role: 'officer',
-    cdsGroup: 'ICT & Digital Skills',
-    phoneNumber: '+2348055551234',
-    batch: '2024 Batch B Stream 1',
-    ppa: 'Lagos State Science & Tech Board',
-    isVerified: true,
-    registeredAt: new Date(Date.now() - 28 * 86400000).toISOString(),
-    createdAt: new Date(Date.now() - 28 * 86400000).toISOString()
-  },
-  {
-    id: 'usr_member_1',
-    fullName: 'Ibrahim Oladepo Adeleke',
-    stateCode: 'LA/24B/1042',
-    email: 'ibrahim.ade@nysc.gov.ng',
-    role: 'member',
-    cdsGroup: 'Editorial & Publicity',
-    phoneNumber: '+2348140001122',
-    batch: '2024 Batch B Stream 1',
-    ppa: 'Surulere Local Government Secondary School',
-    isVerified: true,
-    registeredAt: new Date(Date.now() - 25 * 86400000).toISOString(),
-    createdAt: new Date(Date.now() - 25 * 86400000).toISOString()
-  },
-  {
-    id: 'usr_member_2',
-    fullName: 'Ngozi Blessing Eze',
-    stateCode: 'LA/24B/1205',
-    email: 'ngozi.eze@nysc.gov.ng',
-    role: 'member',
-    cdsGroup: 'Editorial & Publicity',
-    phoneNumber: '+2348139998877',
-    batch: '2024 Batch B Stream 1',
-    ppa: 'Federal High Court, Ikoyi',
-    isVerified: true,
-    registeredAt: new Date(Date.now() - 24 * 86400000).toISOString(),
-    createdAt: new Date(Date.now() - 24 * 86400000).toISOString()
-  },
-  {
-    id: 'usr_member_3',
-    fullName: 'Ayomide Victor Babatunde',
-    stateCode: 'LA/24B/1589',
-    email: 'ayomide.v@nysc.gov.ng',
-    role: 'member',
-    cdsGroup: 'ICT & Digital Skills',
-    phoneNumber: '+2348071122334',
-    batch: '2024 Batch B Stream 1',
-    ppa: 'Union Bank of Nigeria, Marina',
-    isVerified: true,
-    registeredAt: new Date(Date.now() - 23 * 86400000).toISOString(),
-    createdAt: new Date(Date.now() - 23 * 86400000).toISOString()
-  },
-  {
-    id: 'usr_member_4',
-    fullName: 'Zainab Mohammed Danjuma',
-    stateCode: 'LA/24B/2011',
-    email: 'zainab.d@nysc.gov.ng',
-    role: 'member',
-    cdsGroup: 'FRSC Road Safety',
-    phoneNumber: '+2348098877665',
-    batch: '2024 Batch B Stream 1',
-    ppa: 'Federal Ministry of Works, TBS',
-    isVerified: true,
-    registeredAt: new Date(Date.now() - 22 * 86400000).toISOString(),
-    createdAt: new Date(Date.now() - 22 * 86400000).toISOString()
-  },
-  {
-    id: 'usr_member_5',
-    fullName: 'Tariere Ebimobowei',
-    stateCode: 'LA/24B/2344',
-    email: 'tariere.e@nysc.gov.ng',
-    role: 'member',
-    cdsGroup: 'Medical & Health',
-    phoneNumber: '+2348165544332',
-    batch: '2024 Batch B Stream 1',
-    ppa: 'General Hospital, Gbagada',
-    isVerified: true,
-    registeredAt: new Date(Date.now() - 21 * 86400000).toISOString(),
-    createdAt: new Date(Date.now() - 21 * 86400000).toISOString()
+    registeredAt: new Date().toISOString(),
+    createdAt: new Date().toISOString()
   }
 ];
 
 const TODAY_DATE = new Date().toISOString().split('T')[0];
-const LAST_WEEK_DATE = new Date(Date.now() - 7 * 86400000).toISOString().split('T')[0];
 
 const INITIAL_MEETINGS: IMeeting[] = [
   {
-    id: 'meet_today_ep',
-    title: 'Weekly Community Development Service - Editorial & Community Press',
-    cdsGroup: 'Editorial & Publicity',
+    id: 'meet_osun_cds',
+    title: 'Weekly CDS General Assembly & Roll-Call',
+    cdsGroup: 'All',
     date: TODAY_DATE,
     meetingNumber: 1,
     startTime: '08:00',
     endTime: '12:00',
-    venue: 'Surulere Local Government Council Hall, Lagos',
-    agenda: 'Quarterly CDS Magazine compilation, school outreach press release review, and attendance verification.',
+    venue: 'NYSC Local Government Secretariat Hall, Osun State',
+    agenda: 'Weekly CDS community project execution, roll-call registration, and physical verification.',
     isActive: true,
-    createdAt: new Date(Date.now() - 2 * 86400000).toISOString()
-  },
-  {
-    id: 'meet_today_ict',
-    title: 'Bi-Weekly Tech & Youth Digital Literacy Outreach',
-    cdsGroup: 'ICT & Digital Skills',
-    date: TODAY_DATE,
-    meetingNumber: 1,
-    startTime: '08:30',
-    endTime: '12:30',
-    venue: 'Public Library ICT Hub, Yaba, Lagos',
-    agenda: 'Coding for secondary schools progress report & workshop preparation.',
-    isActive: true,
-    createdAt: new Date(Date.now() - 2 * 86400000).toISOString()
+    createdAt: new Date().toISOString()
   }
 ];
 
-const INITIAL_ATTENDANCES: IAttendance[] = [
-  {
-    id: 'att_approved_1',
-    fullName: 'Ngozi Blessing Eze',
-    stateCode: 'LA/24B/1205',
-    cdsGroup: 'Editorial & Publicity',
-    meetingDate: TODAY_DATE,
-    meetingNumber: 1,
-    meetingId: 'meet_today_ep',
-    checkInTime: new Date(Date.now() - 90 * 60000).toISOString(),
-    status: 'Approved',
-    approvedBy: {
-      officerId: 'usr_officer_1',
-      fullName: 'Fatima Aminu Bello',
-      stateCode: 'LA/24B/0188',
-      role: 'officer'
-    },
-    approvalTimestamp: new Date(Date.now() - 30 * 60000).toISOString(),
-    meetingNotes: 'Verified present in uniform at Surulere LG Hall.',
-    rejectionReason: null,
-    createdAt: new Date(Date.now() - 90 * 60000).toISOString(),
-    updatedAt: new Date(Date.now() - 30 * 60000).toISOString()
-  },
-  {
-    id: 'att_pending_1',
-    fullName: 'Ibrahim Oladepo Adeleke',
-    stateCode: 'LA/24B/1042',
-    cdsGroup: 'Editorial & Publicity',
-    meetingDate: TODAY_DATE,
-    meetingNumber: 1,
-    meetingId: 'meet_today_ep',
-    checkInTime: new Date(Date.now() - 45 * 60000).toISOString(),
-    status: 'Pending',
-    approvedBy: null,
-    approvalTimestamp: null,
-    rejectionReason: null,
-    createdAt: new Date(Date.now() - 45 * 60000).toISOString(),
-    updatedAt: new Date(Date.now() - 45 * 60000).toISOString()
-  }
-];
-
-// Seed 100-boxes for members
-const INITIAL_MEETING_BOXES: Record<string, Record<number, IMeetingBoxRecord>> = {
-  'LA/24B/1205': {
-    1: { meetingNumber: 1, attended: true, markedAt: TODAY_DATE, markedBy: 'Fatima Aminu Bello (Officer)' },
-    2: { meetingNumber: 2, attended: true, markedAt: LAST_WEEK_DATE, markedBy: 'Fatima Aminu Bello (Officer)' },
-    3: { meetingNumber: 3, attended: true, markedAt: '2026-10-01', markedBy: 'Fatima Aminu Bello (Officer)' }
-  },
-  'LA/24B/1042': {
-    1: { meetingNumber: 1, attended: true, markedAt: LAST_WEEK_DATE, markedBy: 'Fatima Aminu Bello (Officer)' },
-    2: { meetingNumber: 2, attended: false }
-  },
-  'LA/24B/1589': {
-    1: { meetingNumber: 1, attended: true, markedAt: TODAY_DATE, markedBy: 'Chukwuma David Okonkwo (Officer)' }
-  },
-  'LA/24B/2011': {
-    1: { meetingNumber: 1, attended: true, markedAt: TODAY_DATE, markedBy: 'Capt. Olusegun Adeyemi (Admin)' }
-  },
-  'LA/24B/2344': {
-    1: { meetingNumber: 1, attended: true, markedAt: TODAY_DATE, markedBy: 'Capt. Olusegun Adeyemi (Admin)' }
-  }
-};
-
-const INITIAL_AUDIT_LOGS: IAuditLog[] = [
-  {
-    id: 'audit_init_1',
-    action: 'MEMBER_REGISTERED',
-    performedBy: {
-      id: 'usr_admin_1',
-      fullName: 'Capt. Olusegun Adeyemi',
-      role: 'admin',
-      stateCode: 'LA/24B/0001'
-    },
-    targetMember: {
-      fullName: 'Ibrahim Oladepo Adeleke',
-      stateCode: 'LA/24B/1042'
-    },
-    details: 'Registered corps member into "Editorial & Publicity" CDS Group and generated 100-meeting attendance record.',
-    cdsGroup: 'Editorial & Publicity',
-    timestamp: new Date(Date.now() - 25 * 86400000).toISOString()
-  }
-];
-
-const INITIAL_NOTIFICATIONS: INotification[] = [
-  {
-    id: 'notif_init_1',
-    stateCode: 'LA/24B/1042',
-    title: 'CDS Group Registration Confirmed',
-    message: 'You have been successfully registered for the Editorial & Publicity CDS group. Your 100-meeting attendance card is active.',
-    type: 'success',
-    isRead: true,
-    createdAt: new Date(Date.now() - 25 * 86400000).toISOString()
-  }
-];
+// Clean empty arrays - ready for real Osun State corps members data entry
+const INITIAL_ATTENDANCES: IAttendance[] = [];
+const INITIAL_MEETING_BOXES: Record<string, Record<number, IMeetingBoxRecord>> = {};
+const INITIAL_AUDIT_LOGS: IAuditLog[] = [];
+const INITIAL_NOTIFICATIONS: INotification[] = [];
 
 class StorageEngine {
   private store: DatabaseStore = {
@@ -390,6 +203,10 @@ class StorageEngine {
     actor?: { id: string; fullName: string; role: string };
   }): Promise<{ user: IUser; sheet: IMemberAttendanceSheet }> {
     const cleanStateCode = data.stateCode.trim().toUpperCase();
+    if (!cleanStateCode.startsWith('OS/')) {
+      throw new Error(`Invalid State Code "${cleanStateCode}". All NYSC State Codes must start with "OS/" for Osun State (e.g. OS/24B/1042).`);
+    }
+
     const cleanEmail = data.email.trim().toLowerCase();
     const cleanGroup = data.cdsGroup.trim();
 
@@ -509,6 +326,12 @@ class StorageEngine {
     for (const mem of members) {
       try {
         const cleanCode = mem.stateCode.trim().toUpperCase();
+        if (!cleanCode.startsWith('OS/')) {
+          skipped++;
+          errors.push(`${mem.stateCode}: State Code must start with OS/ (Osun State)`);
+          continue;
+        }
+
         const existing = this.store.users.find(u => u.stateCode.trim().toUpperCase() === cleanCode);
         if (existing) {
           skipped++;
@@ -786,6 +609,10 @@ class StorageEngine {
     meetingId?: string;
   }): Promise<IAttendance> {
     const cleanStateCode = data.stateCode.trim().toUpperCase();
+    if (!cleanStateCode.startsWith('OS/')) {
+      throw new Error(`Invalid State Code "${cleanStateCode}". All NYSC State Codes must start with "OS/" for Osun State (e.g. OS/24B/1042).`);
+    }
+
     const cleanDate = data.meetingDate.trim();
     const cleanGroup = data.cdsGroup.trim();
 

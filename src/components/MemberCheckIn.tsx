@@ -221,7 +221,7 @@ export const MemberCheckIn: React.FC<MemberCheckInProps> = ({
               required
               value={fullName}
               onChange={e => setFullName(e.target.value)}
-              placeholder="e.g. Ibrahim Oladepo Adeleke"
+              placeholder="e.g. Adeleke Kehinde Babatunde"
               className="w-full px-3.5 py-2.5 text-sm bg-white border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-700/20 focus:border-emerald-700 transition-all text-stone-900 placeholder:text-stone-400"
             />
           </div>
@@ -238,12 +238,12 @@ export const MemberCheckIn: React.FC<MemberCheckInProps> = ({
                 required
                 value={stateCode}
                 onChange={e => setStateCode(e.target.value.toUpperCase())}
-                placeholder="e.g. LA/24B/1042 or FC/25A/0192"
+                placeholder="e.g. OS/24B/1042"
                 className="w-full px-3.5 py-2.5 text-sm font-mono uppercase bg-white border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-700/20 focus:border-emerald-700 transition-all text-stone-900 placeholder:text-stone-400"
               />
             </div>
             <p className="text-[11px] text-stone-500 mt-1">
-              Must match your NYSC deployment state code format (e.g. LA/24B/1042).
+              Must start with <strong>OS/</strong> for Osun State (e.g. OS/24B/1042).
             </p>
           </div>
 

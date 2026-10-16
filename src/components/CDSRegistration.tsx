@@ -61,9 +61,14 @@ export const CDSRegistration: React.FC<CDSRegistrationProps> = ({
       return;
     }
 
+    const cleanCode = stateCode.trim().toUpperCase();
+    if (!cleanCode.startsWith('OS/')) {
+      setErrorMessage('NYSC State Code must start with "OS/" for Osun State (e.g. OS/24B/1042).');
+      return;
+    }
+
     try {
       setIsLoading(true);
-      const cleanCode = stateCode.trim().toUpperCase();
       const res = await api.registerCDS({
         fullName: fullName.trim(),
         stateCode: cleanCode,
@@ -216,11 +221,11 @@ export const CDSRegistration: React.FC<CDSRegistrationProps> = ({
                 required
                 value={stateCode}
                 onChange={e => setStateCode(e.target.value.toUpperCase())}
-                placeholder="e.g. LA/24B/3042"
+                placeholder="e.g. OS/24B/1042"
                 className="w-full px-3.5 py-2.5 text-sm font-mono uppercase bg-white border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-700/20 focus:border-emerald-700 text-stone-900 placeholder:text-stone-400"
               />
-              <p className="text-[11px] text-stone-400 mt-0.5">
-                Format: 2 State letters / Batch year & stream / 4 digits (e.g. LA/24B/1042)
+              <p className="text-[11px] text-stone-500 mt-0.5">
+                Must start with <strong>OS/</strong> for Osun State (e.g. OS/24B/1042)
               </p>
             </div>
 
@@ -305,7 +310,7 @@ export const CDSRegistration: React.FC<CDSRegistrationProps> = ({
                   id="ppa"
                   value={ppa}
                   onChange={e => setPpa(e.target.value)}
-                  placeholder="e.g. Government College, Lagos"
+                  placeholder="e.g. Osogbo Grammar School, Osun"
                   className="w-full px-3.5 py-2 text-xs sm:text-sm bg-white border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-700/20 focus:border-emerald-700 text-stone-900"
                 />
               </div>

@@ -104,7 +104,7 @@ export const MemberHistory: React.FC<MemberHistoryProps> = ({
             type="text"
             value={filterStateCode}
             onChange={e => setFilterStateCode(e.target.value.toUpperCase())}
-            placeholder="e.g. LA/24B/1042"
+            placeholder="e.g. OS/24B/1042"
             className="px-2.5 py-1 text-xs font-mono uppercase border border-stone-300 rounded-lg w-36"
           />
         </div>

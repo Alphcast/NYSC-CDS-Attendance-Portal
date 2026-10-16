@@ -62,10 +62,10 @@ router.post('/toggle-box', async (req: AuthenticatedRequest, res: Response) => {
 
     // Identify actor (from token/header or default to Officer)
     const actor = req.user || {
-      id: 'officer_active',
-      fullName: 'CDS Attendance Officer',
+      id: 'usr_officer_osun',
+      fullName: 'CDS Verification Officer (Osogbo)',
       role: 'officer',
-      stateCode: 'LA/24B/0188'
+      stateCode: 'OS/24B/0088'
     };
 
     const result = await storage.toggleMeetingBox(stateCode, meetingNumber, actor);

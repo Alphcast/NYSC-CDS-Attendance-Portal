@@ -20,9 +20,9 @@ router.get('/', async (_req, res) => {
 router.get('/csv-template', (_req, res) => {
   const csvContent =
     'FullName,StateCode,Email,CDSGroup,PhoneNumber,Batch,PPA\r\n' +
-    'Babatunde Kehinde,LA/24B/3001,babatunde.k@nysc.gov.ng,Editorial & Publicity,+2348031112222,2024 Batch B Stream 1,Lagos State Ministry of Works\r\n' +
-    'Chioma Stella Obi,LA/24B/3002,chioma.obi@nysc.gov.ng,ICT & Digital Skills,+2348023334444,2024 Batch B Stream 1,Federal High Court Ikoyi\r\n' +
-    'Aliyu Usman,LA/24B/3003,aliyu.u@nysc.gov.ng,FRSC Road Safety,+2348057778888,2024 Batch B Stream 1,First Bank Nigeria Marina\r\n';
+    'Adeyemi Tunde,OS/24B/1001,tunde.a@nysc.gov.ng,Editorial & Publicity,+2348031112222,2024 Batch B Stream 1,Osun State High Court Osogbo\r\n' +
+    'Oladipo Blessing,OS/24B/1002,blessing.o@nysc.gov.ng,ICT & Digital Skills,+2348023334444,2024 Batch B Stream 1,Osun State Poly Iree\r\n' +
+    'Adewale Samuel,OS/24B/1003,samuel.a@nysc.gov.ng,FRSC Road Safety,+2348057778888,2024 Batch B Stream 1,Federal Polytechnic Ede\r\n';
 
   res.setHeader('Content-Type', 'text/csv');
   res.setHeader('Content-Disposition', 'attachment; filename="NYSC_Corps_Members_Template.csv"');

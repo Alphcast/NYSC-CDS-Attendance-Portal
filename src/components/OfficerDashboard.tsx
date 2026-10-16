@@ -276,7 +276,7 @@ export const OfficerDashboard: React.FC<OfficerDashboardProps> = ({
             type="text"
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
-            placeholder="Search by corps member name or state code (e.g. Ibrahim, LA/24B)..."
+            placeholder="Search by corps member name or state code (e.g. OS/24B)..."
             className="w-full pl-9 pr-24 py-2 text-xs sm:text-sm border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-700/20 focus:border-emerald-700"
           />
           <button

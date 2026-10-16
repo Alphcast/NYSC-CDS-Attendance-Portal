@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { MemberAttendanceSheet, CDSAttendanceRecordsResponse, User } from '../types';
 import { api } from '../api';
 import { CDS_GROUPS } from './CDSRegistration';
+import { ConfirmationModal } from './ConfirmationModal';
 import {
   Search,
   Check,
@@ -41,6 +42,13 @@ export const AttendanceRecord: React.FC<AttendanceRecordProps> = ({
   const [updatingBox, setUpdatingBox] = useState<string | null>(null); // "stateCode-meetingNum"
   const [feedback, setFeedback] = useState<string | null>(null);
 
+  // Unmark Attendance Confirmation Modal State
+  const [pendingUnmark, setPendingUnmark] = useState<{
+    member: MemberAttendanceSheet;
+    meetingNumber: number;
+  } | null>(null);
+  const [isUnmarking, setIsUnmarking] = useState(false);
+
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -73,8 +81,22 @@ export const AttendanceRecord: React.FC<AttendanceRecordProps> = ({
     fetchRecords();
   };
 
-  // Click on a square box to mark or unmark presence for this meeting
-  const handleBoxClick = async (stateCode: string, meetingNumber: number) => {
+  // Handle clicking a square box in the 100-meeting row
+  const handleBoxClick = (member: MemberAttendanceSheet, meetingNumber: number) => {
+    const box = member.boxes[meetingNumber];
+    const isAttended = box?.attended || false;
+
+    if (isAttended) {
+      // The meeting is currently marked! Show confirmation popup before unmarking
+      setPendingUnmark({ member, meetingNumber });
+    } else {
+      // The meeting is unmarked: Mark as attended immediately
+      executeToggle(member.stateCode, meetingNumber);
+    }
+  };
+
+  // Perform API call to mark or unmark meeting box and update state
+  const executeToggle = async (stateCode: string, meetingNumber: number) => {
     const key = `${stateCode}-${meetingNumber}`;
     try {
       setUpdatingBox(key);
@@ -110,13 +132,34 @@ export const AttendanceRecord: React.FC<AttendanceRecordProps> = ({
       });
 
       setFeedback(res.message);
-      setTimeout(() => setFeedback(null), 3000);
+      setTimeout(() => setFeedback(null), 3500);
+      return res;
     } catch (err: any) {
       setFeedback(`Error: ${err.message || 'Failed to update meeting box'}`);
       setTimeout(() => setFeedback(null), 4000);
+      throw err;
     } finally {
       setUpdatingBox(null);
     }
+  };
+
+  // User confirmed unmarking in the popup modal -> remove the mark
+  const handleConfirmUnmark = async () => {
+    if (!pendingUnmark) return;
+    try {
+      setIsUnmarking(true);
+      await executeToggle(pendingUnmark.member.stateCode, pendingUnmark.meetingNumber);
+      setPendingUnmark(null);
+    } catch {
+      // Error feedback is already handled in executeToggle
+    } finally {
+      setIsUnmarking(false);
+    }
+  };
+
+  // User clicked cancel in the popup modal -> keep the mark intact
+  const handleCancelUnmark = () => {
+    setPendingUnmark(null);
   };
 
   // Scroll 100 boxes quickly
@@ -477,7 +520,7 @@ export const AttendanceRecord: React.FC<AttendanceRecordProps> = ({
                           >
                             <button
                               type="button"
-                              onClick={() => handleBoxClick(member.stateCode, meetingNum)}
+                              onClick={() => handleBoxClick(member, meetingNum)}
                               onMouseEnter={() =>
                                 setHoveredBox({
                                   memberCode: member.stateCode,
@@ -544,6 +587,53 @@ export const AttendanceRecord: React.FC<AttendanceRecordProps> = ({
           </div>
         </div>
       </div>
+
+      {/* Unmark Attendance Confirmation Popup Modal */}
+      <ConfirmationModal
+        isOpen={!!pendingUnmark}
+        title="Unmark Attendance Record"
+        icon="alert"
+        isDestructive={true}
+        confirmLabel="Confirm & Remove Mark"
+        cancelLabel="Cancel"
+        isLoading={isUnmarking}
+        onConfirm={handleConfirmUnmark}
+        onCancel={handleCancelUnmark}
+        message={
+          pendingUnmark ? (
+            <div className="space-y-3.5 text-stone-600">
+              <p className="text-xs sm:text-sm leading-relaxed">
+                Are you sure you want to remove the attendance mark for this corps member?
+              </p>
+
+              <div className="p-3.5 bg-stone-50 rounded-xl border border-stone-200 space-y-2 text-xs">
+                <div className="flex items-center justify-between">
+                  <span className="text-stone-500 font-medium">Corps Member:</span>
+                  <span className="font-bold text-stone-900">{pendingUnmark.member.fullName}</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-stone-500 font-medium">NYSC State Code:</span>
+                  <span className="font-mono font-bold text-emerald-800">{pendingUnmark.member.stateCode}</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-stone-500 font-medium">CDS Group:</span>
+                  <span className="text-stone-700">{pendingUnmark.member.cdsGroup}</span>
+                </div>
+                <div className="flex items-center justify-between pt-1.5 border-t border-stone-200">
+                  <span className="text-stone-500 font-medium">Meeting Session:</span>
+                  <span className="font-mono font-bold text-amber-900 bg-amber-50 px-2.5 py-0.5 rounded border border-amber-200">
+                    Meeting #{pendingUnmark.meetingNumber}
+                  </span>
+                </div>
+              </div>
+
+              <div className="p-2.5 bg-amber-50 rounded-lg border border-amber-200/80 text-[11px] text-amber-900">
+                Notice: Clicking <strong>Confirm & Remove Mark</strong> will remove the checkmark and decrement the attendance score. Clicking <strong>Cancel</strong> will keep the attendance mark intact.
+              </div>
+            </div>
+          ) : null
+        }
+      />
     </div>
   );
 };

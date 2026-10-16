@@ -3,7 +3,7 @@ export type UserRole = 'member' | 'officer' | 'admin';
 export interface IUser {
   id: string;
   fullName: string;
-  stateCode: string; // e.g. "LA/24B/1042"
+  stateCode: string; // e.g. "OS/24B/1042"
   email: string;
   passwordHash?: string;
   role: UserRole;

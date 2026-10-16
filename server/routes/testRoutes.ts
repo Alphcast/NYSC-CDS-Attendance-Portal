@@ -18,7 +18,7 @@ router.post('/run', async (_req, res) => {
   const testMeetingDate = '2026-10-15';
   const timestamp = Date.now();
   const testGroup = `Test Verification Group ${timestamp}`;
-  const testStateCode = `TEST/${timestamp.toString().slice(-4)}/001`;
+  const testStateCode = `OS/24B/${timestamp.toString().slice(-4)}`;
 
   // Test 1: Duplicate Prevention
   const t1Start = Date.now();
@@ -96,7 +96,7 @@ router.post('/run', async (_req, res) => {
       id: 'usr_officer_test',
       fullName: 'Test Verification Officer',
       role: 'officer',
-      stateCode: 'LA/24B/0999'
+      stateCode: 'OS/24B/0999'
     };
 
     const approvedRecord = await storage.approveAttendance(

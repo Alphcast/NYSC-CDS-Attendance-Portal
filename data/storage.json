@@ -1,451 +1,109 @@
 {
   "users": [
     {
-      "id": "usr_admin_1",
-      "fullName": "Capt. Olusegun Adeyemi",
-      "stateCode": "LA/24B/0001",
-      "email": "admin@nysc.gov.ng",
+      "id": "usr_admin_osun",
+      "fullName": "NYSC Osun State CDS Inspector",
+      "stateCode": "OS/24B/0001",
+      "email": "admin.osun@nysc.gov.ng",
       "role": "admin",
       "cdsGroup": "Executive Management",
-      "phoneNumber": "+2348031234567",
+      "phoneNumber": "+2348030000001",
       "batch": "2024 Batch B Stream 1",
-      "ppa": "NYSC Lagos State Secretariat, Surulere",
+      "ppa": "NYSC Osun State Secretariat, Osogbo",
       "isVerified": true,
-      "createdAt": "2026-09-15T22:00:22.652Z"
+      "registeredAt": "2026-10-15T00:00:00+00:00",
+      "createdAt": "2026-10-16T07:31:50.662949+00:00"
     },
     {
-      "id": "usr_officer_1",
-      "fullName": "Fatima Aminu Bello",
-      "stateCode": "LA/24B/0188",
-      "email": "officer.fatima@nysc.gov.ng",
+      "id": "usr_officer_osun",
+      "fullName": "CDS Verification Officer (Osogbo)",
+      "stateCode": "OS/24B/0088",
+      "email": "officer.osogbo@nysc.gov.ng",
       "role": "officer",
       "cdsGroup": "Editorial & Publicity",
-      "phoneNumber": "+2348029876543",
+      "phoneNumber": "+2348020000088",
       "batch": "2024 Batch B Stream 1",
-      "ppa": "Lagos State Ministry of Information, Alausa",
+      "ppa": "Ministry of Youth & Sports, Osogbo",
       "isVerified": true,
-      "createdAt": "2026-09-17T22:00:22.653Z"
+      "registeredAt": "2026-10-15T00:00:00+00:00",
+      "createdAt": "2026-10-16T07:31:50.755895+00:00"
     },
     {
-      "id": "usr_officer_2",
-      "fullName": "Chukwuma David Okonkwo",
-      "stateCode": "LA/24B/0412",
-      "email": "officer.chukwuma@nysc.gov.ng",
-      "role": "officer",
-      "cdsGroup": "ICT & Digital Skills",
-      "phoneNumber": "+2348055551234",
-      "batch": "2024 Batch B Stream 1",
-      "ppa": "Lagos State Science & Tech Board",
-      "isVerified": true,
-      "createdAt": "2026-09-17T22:00:22.653Z"
-    },
-    {
-      "id": "usr_member_1",
-      "fullName": "Ibrahim Oladepo Adeleke",
-      "stateCode": "LA/24B/1042",
-      "email": "ibrahim.ade@nysc.gov.ng",
-      "role": "member",
-      "cdsGroup": "Editorial & Publicity",
-      "phoneNumber": "+2348140001122",
-      "batch": "2024 Batch B Stream 1",
-      "ppa": "Surulere Local Government Secondary School",
-      "isVerified": true,
-      "createdAt": "2026-09-20T22:00:22.653Z"
-    },
-    {
-      "id": "usr_member_2",
-      "fullName": "Ngozi Blessing Eze",
-      "stateCode": "LA/24B/1205",
-      "email": "ngozi.eze@nysc.gov.ng",
-      "role": "member",
-      "cdsGroup": "Editorial & Publicity",
-      "phoneNumber": "+2348139998877",
-      "batch": "2024 Batch B Stream 1",
-      "ppa": "Federal High Court, Ikoyi",
-      "isVerified": true,
-      "createdAt": "2026-09-20T22:00:22.653Z"
-    },
-    {
-      "id": "usr_member_3",
-      "fullName": "Ayomide Victor Babatunde",
-      "stateCode": "LA/24B/1589",
-      "email": "ayomide.v@nysc.gov.ng",
+      "id": "usr_1792135926613_p7cs",
+      "fullName": "Oladepo Rokeeb Olayinka",
+      "stateCode": "OS/24B/1042",
+      "email": "oladepo.rokeeb@nysc.gov.ng",
       "role": "member",
       "cdsGroup": "ICT & Digital Skills",
-      "phoneNumber": "+2348071122334",
+      "phoneNumber": "+2348123456789",
       "batch": "2024 Batch B Stream 1",
-      "ppa": "Union Bank of Nigeria, Marina",
+      "ppa": "Osun State Poly Iree",
       "isVerified": true,
-      "createdAt": "2026-09-20T22:00:22.653Z"
-    },
-    {
-      "id": "usr_member_4",
-      "fullName": "Zainab Mohammed Danjuma",
-      "stateCode": "LA/24B/2011",
-      "email": "zainab.d@nysc.gov.ng",
-      "role": "member",
-      "cdsGroup": "FRSC Road Safety",
-      "phoneNumber": "+2348098877665",
-      "batch": "2024 Batch B Stream 1",
-      "ppa": "Federal Ministry of Works, TBS",
-      "isVerified": true,
-      "createdAt": "2026-09-20T22:00:22.653Z"
-    },
-    {
-      "id": "usr_member_5",
-      "fullName": "Tariere Ebimobowei",
-      "stateCode": "LA/24B/2344",
-      "email": "tariere.e@nysc.gov.ng",
-      "role": "member",
-      "cdsGroup": "Medical & Health",
-      "phoneNumber": "+2348165544332",
-      "batch": "2024 Batch B Stream 1",
-      "ppa": "General Hospital, Gbagada",
-      "isVerified": true,
-      "createdAt": "2026-09-20T22:00:22.653Z"
-    },
-    {
-      "id": "usr_1792102556175_mwzb",
-      "fullName": "Kehinde Olufemi",
-      "stateCode": "LA/24B/4510",
-      "email": "kehinde.o@nysc.gov.ng",
-      "role": "member",
-      "cdsGroup": "ICT & Digital Skills",
-      "phoneNumber": "+2348011223344",
-      "batch": "2024 Batch B",
-      "ppa": "",
-      "isVerified": true,
-      "registeredAt": "2026-10-15T22:15:56.175Z",
-      "createdAt": "2026-10-15T22:15:56.175Z"
+      "registeredAt": "2026-10-16T07:32:06.613+00:00",
+      "createdAt": "2026-10-16T07:32:06.68775+00:00"
     }
   ],
   "attendances": [
     {
-      "id": "att_1792133337759_49xo",
+      "id": "att_1792136633373_e268",
       "fullName": "Automated Test Corps Member",
-      "stateCode": "TEST/7758/001",
-      "cdsGroup": "Test Verification Group 1792133337758",
+      "stateCode": "OS/24B/3373",
+      "cdsGroup": "Test Verification Group 1792136633373",
       "meetingDate": "2026-10-15",
       "meetingNumber": 1,
-      "checkInTime": "2026-10-16T06:48:57.759Z",
+      "checkInTime": "2026-10-16T07:43:53.373Z",
       "status": "Approved",
       "approvedBy": {
         "officerId": "usr_officer_test",
         "fullName": "Test Verification Officer",
         "role": "officer",
-        "stateCode": "LA/24B/0999"
+        "stateCode": "OS/24B/0999"
       },
-      "approvalTimestamp": "2026-10-16T06:48:57.761Z",
+      "approvalTimestamp": "2026-10-16T07:43:53.374Z",
       "meetingNotes": "Physical presence verified during automated test run.",
       "rejectionReason": null,
-      "createdAt": "2026-10-16T06:48:57.759Z",
-      "updatedAt": "2026-10-16T06:48:57.761Z",
+      "createdAt": "2026-10-16T07:43:53.373Z",
+      "updatedAt": "2026-10-16T07:43:53.374Z",
       "rejectedBy": null,
       "rejectionTimestamp": null
     },
     {
-      "id": "att_1792132643047_mqin",
-      "fullName": "Automated Test Corps Member",
-      "stateCode": "TEST/3047/001",
-      "cdsGroup": "Test Verification Group 1792132643047",
-      "meetingDate": "2026-10-15",
-      "meetingNumber": 1,
-      "checkInTime": "2026-10-16T06:37:23.047Z",
-      "status": "Approved",
-      "approvedBy": {
-        "officerId": "usr_officer_test",
-        "fullName": "Test Verification Officer",
-        "role": "officer",
-        "stateCode": "LA/24B/0999"
-      },
-      "approvalTimestamp": "2026-10-16T06:37:23.049Z",
-      "meetingNotes": "Physical presence verified during automated test run.",
-      "rejectionReason": null,
-      "createdAt": "2026-10-16T06:37:23.047Z",
-      "updatedAt": "2026-10-16T06:37:23.049Z",
-      "rejectedBy": null,
-      "rejectionTimestamp": null
-    },
-    {
-      "id": "att_1792131409990_4llj",
-      "fullName": "Automated Test Corps Member",
-      "stateCode": "TEST/9990/001",
-      "cdsGroup": "Test Verification Group 1792131409990",
-      "meetingDate": "2026-10-15",
-      "meetingNumber": 1,
-      "checkInTime": "2026-10-16T06:16:49.990Z",
-      "status": "Approved",
-      "approvedBy": {
-        "officerId": "usr_officer_test",
-        "fullName": "Test Verification Officer",
-        "role": "officer",
-        "stateCode": "LA/24B/0999"
-      },
-      "approvalTimestamp": "2026-10-16T06:16:49.991Z",
-      "meetingNotes": "Physical presence verified during automated test run.",
-      "rejectionReason": null,
-      "createdAt": "2026-10-16T06:16:49.990Z",
-      "updatedAt": "2026-10-16T06:16:49.991Z",
-      "rejectedBy": null,
-      "rejectionTimestamp": null
-    },
-    {
-      "id": "att_1792103865376_wqpz",
-      "fullName": "Automated Test Corps Member",
-      "stateCode": "TEST/5376/001",
-      "cdsGroup": "Test Verification Group 1792103865376",
-      "meetingDate": "2026-10-15",
-      "meetingNumber": 1,
-      "checkInTime": "2026-10-15T22:37:45.376Z",
-      "status": "Approved",
-      "approvedBy": {
-        "officerId": "usr_officer_test",
-        "fullName": "Test Verification Officer",
-        "role": "officer",
-        "stateCode": "LA/24B/0999"
-      },
-      "approvalTimestamp": "2026-10-15T22:37:45.378Z",
-      "meetingNotes": "Physical presence verified during automated test run.",
-      "rejectionReason": null,
-      "createdAt": "2026-10-15T22:37:45.376Z",
-      "updatedAt": "2026-10-15T22:37:45.378Z",
-      "rejectedBy": null,
-      "rejectionTimestamp": null
-    },
-    {
-      "id": "att_1792103839011_96gp",
-      "fullName": "Automated Test Corps Member",
-      "stateCode": "TEST/9011/001",
-      "cdsGroup": "Test Verification Group 1792103839011",
-      "meetingDate": "2026-10-15",
-      "meetingNumber": 1,
-      "checkInTime": "2026-10-15T22:37:19.011Z",
-      "status": "Approved",
-      "approvedBy": {
-        "officerId": "usr_officer_test",
-        "fullName": "Test Verification Officer",
-        "role": "officer",
-        "stateCode": "LA/24B/0999"
-      },
-      "approvalTimestamp": "2026-10-15T22:37:19.013Z",
-      "meetingNotes": "Physical presence verified during automated test run.",
-      "rejectionReason": null,
-      "createdAt": "2026-10-15T22:37:19.011Z",
-      "updatedAt": "2026-10-15T22:37:19.013Z",
-      "rejectedBy": null,
-      "rejectionTimestamp": null
-    },
-    {
-      "id": "att_1792103831321_rrwv",
-      "fullName": "Automated Test Corps Member",
-      "stateCode": "TEST/1321/001",
-      "cdsGroup": "Test Verification Group",
-      "meetingDate": "2026-10-15",
-      "meetingNumber": 1,
-      "checkInTime": "2026-10-15T22:37:11.321Z",
-      "status": "Approved",
-      "approvedBy": {
-        "officerId": "usr_officer_test",
-        "fullName": "Test Verification Officer",
-        "role": "officer",
-        "stateCode": "LA/24B/0999"
-      },
-      "approvalTimestamp": "2026-10-15T22:37:11.322Z",
-      "meetingNotes": "Physical presence verified during automated test run.",
-      "rejectionReason": null,
-      "createdAt": "2026-10-15T22:37:11.321Z",
-      "updatedAt": "2026-10-15T22:37:11.322Z",
-      "rejectedBy": null,
-      "rejectionTimestamp": null
-    },
-    {
-      "id": "att_1792103803368_9fdt",
-      "fullName": "Automated Test Corps Member",
-      "stateCode": "TEST/3368/001",
-      "cdsGroup": "Test Verification Group",
-      "meetingDate": "2026-10-15",
-      "meetingNumber": 1,
-      "checkInTime": "2026-10-15T22:36:43.368Z",
-      "status": "Approved",
-      "approvedBy": {
-        "officerId": "usr_officer_test",
-        "fullName": "Test Verification Officer",
-        "role": "officer",
-        "stateCode": "LA/24B/0999"
-      },
-      "approvalTimestamp": "2026-10-15T22:36:43.369Z",
-      "meetingNotes": "Physical presence verified during automated test run.",
-      "rejectionReason": null,
-      "createdAt": "2026-10-15T22:36:43.368Z",
-      "updatedAt": "2026-10-15T22:36:43.369Z",
-      "rejectedBy": null,
-      "rejectionTimestamp": null
-    },
-    {
-      "id": "att_1792102556175_8uuh",
-      "fullName": "Kehinde Olufemi",
-      "stateCode": "LA/24B/4510",
+      "id": "att_1792135926613_vdpv",
+      "fullName": "Oladepo Rokeeb Olayinka",
+      "stateCode": "OS/24B/1042",
       "cdsGroup": "ICT & Digital Skills",
-      "meetingDate": "2026-10-15",
+      "meetingDate": "2026-10-16",
       "meetingNumber": 1,
-      "checkInTime": "2026-10-15T22:15:56.175Z",
-      "status": "Pending",
-      "approvedBy": null,
-      "approvalTimestamp": null,
-      "meetingNotes": "Corps member registered into CDS Group: ICT & Digital Skills",
-      "rejectionReason": null,
-      "createdAt": "2026-10-15T22:15:56.175Z",
-      "updatedAt": "2026-10-15T22:15:56.175Z"
-    },
-    {
-      "id": "att_1792101718911_ux7n",
-      "fullName": "Ibrahim Oladepo Adeleke",
-      "stateCode": "LA/24B/1042",
-      "cdsGroup": "ICT & Digital Skills",
-      "meetingDate": "2026-10-15",
-      "meetingId": "meet_today_ict",
-      "checkInTime": "2026-10-15T22:01:58.911Z",
-      "status": "Pending",
-      "approvedBy": null,
-      "approvalTimestamp": null,
-      "meetingNotes": "",
-      "rejectionReason": null,
-      "createdAt": "2026-10-15T22:01:58.911Z",
-      "updatedAt": "2026-10-15T22:01:58.911Z"
-    },
-    {
-      "id": "att_1792101629340_bu4y",
-      "fullName": "Automated Test Corps Member",
-      "stateCode": "TEST/9340/001",
-      "cdsGroup": "Test Verification Group",
-      "meetingDate": "2026-10-15",
-      "checkInTime": "2026-10-15T22:00:29.340Z",
+      "checkInTime": "2026-10-16T07:32:06.613Z",
       "status": "Approved",
       "approvedBy": {
-        "officerId": "usr_officer_test",
-        "fullName": "Test Verification Officer",
+        "officerId": "usr_officer_osun",
+        "fullName": "CDS Verification Officer (Osogbo)",
         "role": "officer",
-        "stateCode": "LA/24B/0999"
+        "stateCode": "OS/24B/0088"
       },
-      "approvalTimestamp": "2026-10-15T22:00:29.341Z",
-      "meetingNotes": "Physical presence verified during automated test run.",
+      "approvalTimestamp": "2026-10-16T07:34:54.908Z",
+      "meetingNotes": "Officer CDS Verification Officer (Osogbo) verified physical presence at CDS session.",
       "rejectionReason": null,
-      "createdAt": "2026-10-15T22:00:29.340Z",
-      "updatedAt": "2026-10-15T22:00:29.341Z",
+      "createdAt": "2026-10-16T07:32:06.613Z",
+      "updatedAt": "2026-10-16T07:34:54.908Z",
       "rejectedBy": null,
       "rejectionTimestamp": null
-    },
-    {
-      "id": "att_pending_1",
-      "fullName": "Ibrahim Oladepo Adeleke",
-      "stateCode": "LA/24B/1042",
-      "cdsGroup": "Editorial & Publicity",
-      "meetingDate": "2026-10-15",
-      "meetingId": "meet_today_ep",
-      "checkInTime": "2026-10-15T21:15:22.653Z",
-      "status": "Pending",
-      "approvedBy": null,
-      "approvalTimestamp": null,
-      "rejectionReason": null,
-      "createdAt": "2026-10-15T21:15:22.653Z",
-      "updatedAt": "2026-10-15T21:15:22.653Z"
-    },
-    {
-      "id": "att_approved_1",
-      "fullName": "Ngozi Blessing Eze",
-      "stateCode": "LA/24B/1205",
-      "cdsGroup": "Editorial & Publicity",
-      "meetingDate": "2026-10-15",
-      "meetingId": "meet_today_ep",
-      "checkInTime": "2026-10-15T20:30:22.653Z",
-      "status": "Approved",
-      "approvedBy": {
-        "officerId": "usr_officer_1",
-        "fullName": "Fatima Aminu Bello",
-        "stateCode": "LA/24B/0188",
-        "role": "officer"
-      },
-      "approvalTimestamp": "2026-10-15T21:30:22.653Z",
-      "meetingNotes": "Verified present in uniform at Surulere LG Hall.",
-      "rejectionReason": null,
-      "createdAt": "2026-10-15T20:30:22.653Z",
-      "updatedAt": "2026-10-15T21:30:22.653Z"
-    },
-    {
-      "id": "att_prev_1",
-      "fullName": "Ibrahim Oladepo Adeleke",
-      "stateCode": "LA/24B/1042",
-      "cdsGroup": "Editorial & Publicity",
-      "meetingDate": "2026-10-08",
-      "meetingId": "meet_prev_ep",
-      "checkInTime": "2026-10-08T08:22:15.000Z",
-      "status": "Approved",
-      "approvedBy": {
-        "officerId": "usr_officer_1",
-        "fullName": "Fatima Aminu Bello",
-        "stateCode": "LA/24B/0188",
-        "role": "officer"
-      },
-      "approvalTimestamp": "2026-10-08T09:10:00.000Z",
-      "meetingNotes": "Present and participated in article review.",
-      "createdAt": "2026-10-08T08:22:15.000Z",
-      "updatedAt": "2026-10-08T09:10:00.000Z"
-    },
-    {
-      "id": "att_prev_rejected",
-      "fullName": "Ayomide Victor Babatunde",
-      "stateCode": "LA/24B/1589",
-      "cdsGroup": "Editorial & Publicity",
-      "meetingDate": "2026-10-08",
-      "meetingId": "meet_prev_ep",
-      "checkInTime": "2026-10-08T08:50:00.000Z",
-      "status": "Rejected",
-      "rejectionReason": "Member not present during roll-call roll verification. Proxy submission detected.",
-      "rejectedBy": {
-        "officerId": "usr_officer_1",
-        "fullName": "Fatima Aminu Bello"
-      },
-      "rejectionTimestamp": "2026-10-08T11:00:00.000Z",
-      "createdAt": "2026-10-08T08:50:00.000Z",
-      "updatedAt": "2026-10-08T11:00:00.000Z"
     }
   ],
   "meetings": [
     {
-      "id": "meet_today_ep",
-      "title": "Weekly Community Development Service - Editorial & Community Press",
-      "cdsGroup": "Editorial & Publicity",
-      "date": "2026-10-15",
+      "id": "meet_osun_cds",
+      "title": "Weekly CDS General Assembly & Roll-Call",
+      "cdsGroup": "All",
+      "date": "2026-10-16",
+      "meetingNumber": 1,
       "startTime": "08:00",
       "endTime": "12:00",
-      "venue": "Surulere Local Government Council Hall, Lagos",
-      "agenda": "Quarterly CDS Magazine compilation, school outreach press release review, and attendance verification.",
+      "venue": "NYSC Local Government Secretariat Hall, Osun State",
+      "agenda": "Weekly CDS project execution, official roll-call, and attendance physical verification.",
       "isActive": true,
-      "createdAt": "2026-10-13T22:00:22.653Z"
-    },
-    {
-      "id": "meet_today_ict",
-      "title": "Bi-Weekly Tech & Youth Digital Literacy Outreach",
-      "cdsGroup": "ICT & Digital Skills",
-      "date": "2026-10-15",
-      "startTime": "08:30",
-      "endTime": "12:30",
-      "venue": "Public Library ICT Hub, Yaba, Lagos",
-      "agenda": "Coding for secondary schools progress report & workshop preparation.",
-      "isActive": true,
-      "createdAt": "2026-10-13T22:00:22.653Z"
-    },
-    {
-      "id": "meet_prev_ep",
-      "title": "Editorial & Publicity CDS Meeting - Edition 9 Review",
-      "cdsGroup": "Editorial & Publicity",
-      "date": "2026-10-08",
-      "startTime": "08:00",
-      "endTime": "12:00",
-      "venue": "Surulere Local Government Council Hall, Lagos",
-      "agenda": "Editorial board article submissions and print layout planning.",
-      "isActive": false,
-      "createdAt": "2026-10-06T22:00:22.653Z"
+      "createdAt": "2026-10-15T00:00:00+00:00"
     }
   ],
   "auditLogs": [
@@ -455,389 +113,225 @@
         "id": "usr_officer_test",
         "fullName": "Test Verification Officer",
         "role": "officer",
-        "stateCode": "LA/24B/0999"
+        "stateCode": "OS/24B/0999"
       },
       "targetMember": {
         "fullName": "Automated Test Corps Member",
-        "stateCode": "TEST/7758/001"
+        "stateCode": "OS/24B/3373"
       },
-      "details": "Officer verified physical presence and approved attendance for Automated Test Corps Member (TEST/7758/001) on 2026-10-15.",
+      "details": "Officer verified physical presence and approved attendance for Automated Test Corps Member (OS/24B/3373) on 2026-10-15.",
       "meetingDate": "2026-10-15",
-      "cdsGroup": "Test Verification Group 1792133337758",
-      "id": "audit_1792133337761_ar34",
-      "timestamp": "2026-10-16T06:48:57.761Z"
-    },
-    {
-      "action": "ATTENDANCE_APPROVED",
-      "performedBy": {
-        "id": "usr_officer_test",
-        "fullName": "Test Verification Officer",
-        "role": "officer",
-        "stateCode": "LA/24B/0999"
-      },
-      "targetMember": {
-        "fullName": "Automated Test Corps Member",
-        "stateCode": "TEST/3047/001"
-      },
-      "details": "Officer verified physical presence and approved attendance for Automated Test Corps Member (TEST/3047/001) on 2026-10-15.",
-      "meetingDate": "2026-10-15",
-      "cdsGroup": "Test Verification Group 1792132643047",
-      "id": "audit_1792132643050_ugd0",
-      "timestamp": "2026-10-16T06:37:23.050Z"
-    },
-    {
-      "action": "ATTENDANCE_APPROVED",
-      "performedBy": {
-        "id": "usr_officer_test",
-        "fullName": "Test Verification Officer",
-        "role": "officer",
-        "stateCode": "LA/24B/0999"
-      },
-      "targetMember": {
-        "fullName": "Automated Test Corps Member",
-        "stateCode": "TEST/9990/001"
-      },
-      "details": "Officer verified physical presence and approved attendance for Automated Test Corps Member (TEST/9990/001) on 2026-10-15.",
-      "meetingDate": "2026-10-15",
-      "cdsGroup": "Test Verification Group 1792131409990",
-      "id": "audit_1792131409991_0cvk",
-      "timestamp": "2026-10-16T06:16:49.991Z"
-    },
-    {
-      "action": "ATTENDANCE_APPROVED",
-      "performedBy": {
-        "id": "usr_officer_test",
-        "fullName": "Test Verification Officer",
-        "role": "officer",
-        "stateCode": "LA/24B/0999"
-      },
-      "targetMember": {
-        "fullName": "Automated Test Corps Member",
-        "stateCode": "TEST/5376/001"
-      },
-      "details": "Officer verified physical presence and approved attendance for Automated Test Corps Member (TEST/5376/001) on 2026-10-15.",
-      "meetingDate": "2026-10-15",
-      "cdsGroup": "Test Verification Group 1792103865376",
-      "id": "audit_1792103865378_0vko",
-      "timestamp": "2026-10-15T22:37:45.378Z"
+      "cdsGroup": "Test Verification Group 1792136633373",
+      "id": "audit_1792136633374_nbv5",
+      "timestamp": "2026-10-16T07:43:53.374Z"
     },
     {
       "action": "BOX_ATTENDANCE_MARKED",
       "performedBy": {
-        "id": "officer_active",
-        "fullName": "CDS Attendance Officer",
+        "id": "usr_officer_osun",
+        "fullName": "CDS Verification Officer (Osogbo)",
         "role": "officer",
-        "stateCode": "LA/24B/0188"
+        "stateCode": "OS/24B/0088"
       },
       "targetMember": {
-        "fullName": "Kehinde Olufemi",
-        "stateCode": "LA/24B/4510"
+        "fullName": "Oladepo Rokeeb Olayinka",
+        "stateCode": "OS/24B/1042"
       },
-      "details": "Marked present for CDS Meeting #1 for Kehinde Olufemi (LA/24B/4510) in ICT & Digital Skills.",
+      "details": "Marked present for CDS Meeting #1 for Oladepo Rokeeb Olayinka (OS/24B/1042) in ICT & Digital Skills.",
       "meetingNumber": 1,
-      "meetingDate": "2026-10-15",
+      "meetingDate": "2026-10-16",
       "cdsGroup": "ICT & Digital Skills",
-      "id": "audit_1792102560707_2xf0",
-      "timestamp": "2026-10-15T22:16:00.707Z"
+      "id": "audit_1792136255519_764d",
+      "timestamp": "2026-10-16T07:37:35.519Z"
+    },
+    {
+      "action": "BOX_ATTENDANCE_MARKED",
+      "performedBy": {
+        "id": "usr_officer_osun",
+        "fullName": "CDS Verification Officer (Osogbo)",
+        "role": "officer",
+        "stateCode": "OS/24B/0088"
+      },
+      "targetMember": {
+        "fullName": "Oladepo Rokeeb Olayinka",
+        "stateCode": "OS/24B/1042"
+      },
+      "details": "Removed attendance mark for CDS Meeting #1 for Oladepo Rokeeb Olayinka (OS/24B/1042).",
+      "meetingNumber": 1,
+      "meetingDate": "2026-10-16",
+      "cdsGroup": "ICT & Digital Skills",
+      "id": "audit_1792136249893_r4c5",
+      "timestamp": "2026-10-16T07:37:29.893Z"
+    },
+    {
+      "action": "BOX_ATTENDANCE_MARKED",
+      "performedBy": {
+        "id": "usr_officer_osun",
+        "fullName": "CDS Verification Officer (Osogbo)",
+        "role": "officer",
+        "stateCode": "OS/24B/0088"
+      },
+      "targetMember": {
+        "fullName": "Oladepo Rokeeb Olayinka",
+        "stateCode": "OS/24B/1042"
+      },
+      "details": "Removed attendance mark for CDS Meeting #2 for Oladepo Rokeeb Olayinka (OS/24B/1042).",
+      "meetingNumber": 2,
+      "meetingDate": "2026-10-16",
+      "cdsGroup": "ICT & Digital Skills",
+      "id": "audit_1792136242897_lwkw",
+      "timestamp": "2026-10-16T07:37:22.897Z"
+    },
+    {
+      "action": "BOX_ATTENDANCE_MARKED",
+      "performedBy": {
+        "id": "usr_officer_osun",
+        "fullName": "CDS Verification Officer (Osogbo)",
+        "role": "officer",
+        "stateCode": "OS/24B/0088"
+      },
+      "targetMember": {
+        "fullName": "Oladepo Rokeeb Olayinka",
+        "stateCode": "OS/24B/1042"
+      },
+      "details": "Marked present for CDS Meeting #2 for Oladepo Rokeeb Olayinka (OS/24B/1042) in ICT & Digital Skills.",
+      "meetingNumber": 2,
+      "meetingDate": "2026-10-16",
+      "cdsGroup": "ICT & Digital Skills",
+      "id": "audit_1792136116797_5aln",
+      "timestamp": "2026-10-16T07:35:16.797Z"
+    },
+    {
+      "action": "ATTENDANCE_APPROVED",
+      "performedBy": {
+        "id": "usr_officer_osun",
+        "fullName": "CDS Verification Officer (Osogbo)",
+        "role": "officer",
+        "stateCode": "OS/24B/0088"
+      },
+      "targetMember": {
+        "fullName": "Oladepo Rokeeb Olayinka",
+        "stateCode": "OS/24B/1042"
+      },
+      "details": "Officer verified physical presence and approved attendance for Oladepo Rokeeb Olayinka (OS/24B/1042) on 2026-10-16.",
+      "meetingDate": "2026-10-16",
+      "cdsGroup": "ICT & Digital Skills",
+      "id": "audit_1792136094908_zfox",
+      "timestamp": "2026-10-16T07:34:54.908Z"
+    },
+    {
+      "action": "BOX_ATTENDANCE_MARKED",
+      "performedBy": {
+        "id": "usr_officer_osun",
+        "fullName": "CDS Verification Officer (Osogbo)",
+        "role": "officer",
+        "stateCode": "OS/24B/0088"
+      },
+      "targetMember": {
+        "fullName": "Oladepo Rokeeb Olayinka",
+        "stateCode": "OS/24B/1042"
+      },
+      "details": "Marked present for CDS Meeting #1 for Oladepo Rokeeb Olayinka (OS/24B/1042) in ICT & Digital Skills.",
+      "meetingNumber": 1,
+      "meetingDate": "2026-10-16",
+      "cdsGroup": "ICT & Digital Skills",
+      "id": "audit_1792135935025_unqd",
+      "timestamp": "2026-10-16T07:32:15.025Z"
     },
     {
       "action": "MEMBER_REGISTERED",
       "performedBy": {
-        "id": "usr_1792102556175_mwzb",
-        "fullName": "Kehinde Olufemi",
+        "id": "usr_1792135926613_p7cs",
+        "fullName": "Oladepo Rokeeb Olayinka",
         "role": "member",
-        "stateCode": "LA/24B/4510"
+        "stateCode": "OS/24B/1042"
       },
       "targetMember": {
-        "fullName": "Kehinde Olufemi",
-        "stateCode": "LA/24B/4510"
+        "fullName": "Oladepo Rokeeb Olayinka",
+        "stateCode": "OS/24B/1042"
       },
-      "details": "Corps member Kehinde Olufemi (LA/24B/4510) registered into CDS Group: \"ICT & Digital Skills\". Generated 100-meeting attendance record.",
+      "details": "Corps member Oladepo Rokeeb Olayinka (OS/24B/1042) registered into CDS Group: \"ICT & Digital Skills\". Generated 100-meeting attendance record.",
       "cdsGroup": "ICT & Digital Skills",
-      "id": "audit_1792102556176_00eb",
-      "timestamp": "2026-10-15T22:15:56.176Z"
+      "id": "audit_1792135926614_fs96",
+      "timestamp": "2026-10-16T07:32:06.614Z"
     },
     {
-      "action": "CHECK_IN_SUBMITTED",
-      "performedBy": {
-        "id": "LA/24B/1042",
-        "fullName": "Ibrahim Oladepo Adeleke",
-        "role": "member",
-        "stateCode": "LA/24B/1042"
-      },
-      "targetMember": {
-        "fullName": "Ibrahim Oladepo Adeleke",
-        "stateCode": "LA/24B/1042"
-      },
-      "details": "Submitted CDS attendance check-in for ICT & Digital Skills meeting on 2026-10-15. Initial status: Pending",
-      "meetingDate": "2026-10-15",
-      "cdsGroup": "ICT & Digital Skills",
-      "id": "audit_1792101718912_dl09",
-      "timestamp": "2026-10-15T22:01:58.912Z"
-    },
-    {
+      "id": "audit_1792135856361_c4ab",
       "action": "ATTENDANCE_APPROVED",
       "performedBy": {
         "id": "usr_officer_test",
-        "fullName": "Test Verification Officer",
         "role": "officer",
+        "fullName": "Test Verification Officer",
         "stateCode": "LA/24B/0999"
       },
       "targetMember": {
         "fullName": "Automated Test Corps Member",
-        "stateCode": "TEST/9340/001"
+        "stateCode": "TEST/6357/001"
       },
-      "details": "Officer verified physical presence and approved attendance for Automated Test Corps Member (TEST/9340/001) on 2026-10-15. (Previous: Pending)",
+      "details": "Officer verified physical presence and approved attendance for Automated Test Corps Member (TEST/6357/001) on 2026-10-15.",
       "meetingDate": "2026-10-15",
-      "cdsGroup": "Test Verification Group",
-      "id": "audit_1792101629342_q7ea",
-      "timestamp": "2026-10-15T22:00:29.342Z"
-    },
-    {
-      "action": "CHECK_IN_SUBMITTED",
-      "performedBy": {
-        "id": "TEST/9340/001",
-        "fullName": "Automated Test Corps Member",
-        "role": "member",
-        "stateCode": "TEST/9340/001"
-      },
-      "targetMember": {
-        "fullName": "Automated Test Corps Member",
-        "stateCode": "TEST/9340/001"
-      },
-      "details": "Submitted CDS attendance check-in for Test Verification Group meeting on 2026-10-15. Initial status: Pending",
-      "meetingDate": "2026-10-15",
-      "cdsGroup": "Test Verification Group",
-      "id": "audit_1792101629341_5tyv",
-      "timestamp": "2026-10-15T22:00:29.341Z"
-    },
-    {
-      "id": "audit_init_1",
-      "action": "CHECK_IN_SUBMITTED",
-      "performedBy": {
-        "id": "usr_member_1",
-        "fullName": "Ibrahim Oladepo Adeleke",
-        "role": "member",
-        "stateCode": "LA/24B/1042"
-      },
-      "targetMember": {
-        "fullName": "Ibrahim Oladepo Adeleke",
-        "stateCode": "LA/24B/1042"
-      },
-      "details": "Submitted attendance check-in for Editorial & Publicity meeting on 2026-10-15",
-      "meetingDate": "2026-10-15",
-      "cdsGroup": "Editorial & Publicity",
-      "timestamp": "2026-10-15T21:15:22.653Z"
-    },
-    {
-      "id": "audit_init_2",
-      "action": "ATTENDANCE_APPROVED",
-      "performedBy": {
-        "id": "usr_officer_1",
-        "fullName": "Fatima Aminu Bello",
-        "role": "officer",
-        "stateCode": "LA/24B/0188"
-      },
-      "targetMember": {
-        "fullName": "Ngozi Blessing Eze",
-        "stateCode": "LA/24B/1205"
-      },
-      "details": "Verified physical presence and approved CDS attendance.",
-      "meetingDate": "2026-10-15",
-      "cdsGroup": "Editorial & Publicity",
-      "timestamp": "2026-10-15T21:30:22.653Z"
+      "meetingNumber": null,
+      "cdsGroup": "Test Verification Group 1792135856357",
+      "timestamp": "2026-10-16T07:30:56.361+00:00"
     }
   ],
   "notifications": [
     {
-      "stateCode": "LA/24B/4510",
+      "stateCode": "OS/24B/1042",
       "title": "Meeting #1 Marked Present!",
-      "message": "CDS Attendance Officer marked you as present for CDS Meeting #1 in ICT & Digital Skills.",
+      "message": "CDS Verification Officer (Osogbo) marked you as present for CDS Meeting #1 in ICT & Digital Skills.",
       "type": "success",
-      "id": "notif_1792102560708_5pi1",
+      "id": "notif_1792136255520_800p",
       "isRead": false,
-      "createdAt": "2026-10-15T22:16:00.708Z"
+      "createdAt": "2026-10-16T07:37:35.520Z"
     },
     {
-      "stateCode": "LA/24B/4510",
+      "stateCode": "OS/24B/1042",
+      "title": "Meeting #2 Marked Present!",
+      "message": "CDS Verification Officer (Osogbo) marked you as present for CDS Meeting #2 in ICT & Digital Skills.",
+      "type": "success",
+      "id": "notif_1792136116798_css6",
+      "isRead": false,
+      "createdAt": "2026-10-16T07:35:16.798Z"
+    },
+    {
+      "stateCode": "OS/24B/1042",
+      "title": "Meeting #1 Marked Present!",
+      "message": "CDS Verification Officer (Osogbo) marked you as present for CDS Meeting #1 in ICT & Digital Skills.",
+      "type": "success",
+      "id": "notif_1792135935026_ixpo",
+      "isRead": false,
+      "createdAt": "2026-10-16T07:32:15.026Z"
+    },
+    {
+      "stateCode": "OS/24B/1042",
       "title": "Registered for CDS Group: ICT & Digital Skills",
-      "message": "Congratulations Kehinde Olufemi! Your CDS registration is complete. Your 100-meeting attendance record has been generated under ICT & Digital Skills.",
+      "message": "Congratulations Oladepo Rokeeb Olayinka! Your CDS registration is complete. Your 100-meeting attendance record has been generated under ICT & Digital Skills.",
       "type": "success",
-      "id": "notif_1792102556175_d8ae",
+      "id": "notif_1792135926613_ys8c",
       "isRead": false,
-      "createdAt": "2026-10-15T22:15:56.175Z"
-    },
-    {
-      "stateCode": "LA/24B/1042",
-      "title": "Check-In Awaiting Officer Approval",
-      "message": "Your check-in for the ICT & Digital Skills meeting on 2026-10-15 was received. Please ensure you are physically present for verification.",
-      "type": "info",
-      "id": "notif_1792101718911_vv0y",
-      "isRead": false,
-      "createdAt": "2026-10-15T22:01:58.911Z"
-    },
-    {
-      "stateCode": "TEST/9340/001",
-      "title": "CDS Attendance Verified & Approved!",
-      "message": "CDS Attendance Officer Test Verification Officer verified your physical presence at the Test Verification Group meeting on 2026-10-15. You are officially marked as PRESENT.",
-      "type": "success",
-      "id": "notif_1792101629342_cl6i",
-      "isRead": false,
-      "createdAt": "2026-10-15T22:00:29.342Z"
-    },
-    {
-      "stateCode": "TEST/9340/001",
-      "title": "Check-In Awaiting Officer Approval",
-      "message": "Your check-in for the Test Verification Group meeting on 2026-10-15 was received. Please ensure you are physically present for verification.",
-      "type": "info",
-      "id": "notif_1792101629340_qsoe",
-      "isRead": false,
-      "createdAt": "2026-10-15T22:00:29.340Z"
-    },
-    {
-      "id": "notif_1",
-      "stateCode": "LA/24B/1042",
-      "title": "Check-In Received (Pending Officer Approval)",
-      "message": "Your attendance submission for today's CDS meeting has been received and is awaiting officer verification.",
-      "type": "info",
-      "isRead": false,
-      "createdAt": "2026-10-15T21:15:22.653Z"
-    },
-    {
-      "id": "notif_2",
-      "stateCode": "LA/24B/1205",
-      "title": "Attendance Approved!",
-      "message": "CDS Attendance Officer Fatima Aminu Bello verified your physical presence. Your attendance is officially recorded as Present.",
-      "type": "success",
-      "isRead": true,
-      "createdAt": "2026-10-15T21:30:22.653Z"
+      "createdAt": "2026-10-16T07:32:06.613Z"
     }
   ],
   "meetingBoxes": {
-    "LA/24B/1205": {
+    "OS/24B/1042": {
       "1": {
         "meetingNumber": 1,
         "attended": true,
-        "markedAt": "2026-10-15",
-        "markedBy": "Fatima Aminu Bello (Officer)"
-      },
-      "2": {
-        "meetingNumber": 2,
-        "attended": true,
-        "markedAt": "2026-10-08",
-        "markedBy": "Fatima Aminu Bello (Officer)"
-      },
-      "3": {
-        "meetingNumber": 3,
-        "attended": true,
-        "markedAt": "2026-10-01",
-        "markedBy": "Fatima Aminu Bello (Officer)"
-      }
-    },
-    "LA/24B/1042": {
-      "1": {
-        "meetingNumber": 1,
-        "attended": true,
-        "markedAt": "2026-10-08",
-        "markedBy": "Fatima Aminu Bello (Officer)"
+        "markedAt": "2026-10-16T07:37:35.519Z",
+        "markedBy": "CDS Verification Officer (Osogbo) (officer)",
+        "meetingDate": "2026-10-16"
       },
       "2": {
         "meetingNumber": 2,
         "attended": false
       }
     },
-    "LA/24B/1589": {
+    "OS/24B/3373": {
       "1": {
         "meetingNumber": 1,
         "attended": true,
-        "markedAt": "2026-10-15",
-        "markedBy": "Chukwuma David Okonkwo (Officer)"
-      }
-    },
-    "LA/24B/2011": {
-      "1": {
-        "meetingNumber": 1,
-        "attended": true,
-        "markedAt": "2026-10-15",
-        "markedBy": "Capt. Olusegun Adeyemi (Admin)"
-      }
-    },
-    "LA/24B/2344": {
-      "1": {
-        "meetingNumber": 1,
-        "attended": true,
-        "markedAt": "2026-10-15",
-        "markedBy": "Capt. Olusegun Adeyemi (Admin)"
-      }
-    },
-    "LA/24B/4510": {
-      "1": {
-        "meetingNumber": 1,
-        "attended": true,
-        "markedAt": "2026-10-15T22:16:00.707Z",
-        "markedBy": "CDS Attendance Officer (officer)",
-        "meetingDate": "2026-10-15"
-      }
-    },
-    "TEST/3368/001": {
-      "1": {
-        "meetingNumber": 1,
-        "attended": true,
-        "markedAt": "2026-10-15T22:36:43.369Z",
-        "markedBy": "Test Verification Officer (officer)",
-        "meetingDate": "2026-10-15"
-      }
-    },
-    "TEST/1321/001": {
-      "1": {
-        "meetingNumber": 1,
-        "attended": true,
-        "markedAt": "2026-10-15T22:37:11.322Z",
-        "markedBy": "Test Verification Officer (officer)",
-        "meetingDate": "2026-10-15"
-      }
-    },
-    "TEST/9011/001": {
-      "1": {
-        "meetingNumber": 1,
-        "attended": true,
-        "markedAt": "2026-10-15T22:37:19.013Z",
-        "markedBy": "Test Verification Officer (officer)",
-        "meetingDate": "2026-10-15"
-      }
-    },
-    "TEST/5376/001": {
-      "1": {
-        "meetingNumber": 1,
-        "attended": true,
-        "markedAt": "2026-10-15T22:37:45.378Z",
-        "markedBy": "Test Verification Officer (officer)",
-        "meetingDate": "2026-10-15"
-      }
-    },
-    "TEST/9990/001": {
-      "1": {
-        "meetingNumber": 1,
-        "attended": true,
-        "markedAt": "2026-10-16T06:16:49.991Z",
-        "markedBy": "Test Verification Officer (officer)",
-        "meetingDate": "2026-10-15"
-      }
-    },
-    "TEST/3047/001": {
-      "1": {
-        "meetingNumber": 1,
-        "attended": true,
-        "markedAt": "2026-10-16T06:37:23.049Z",
-        "markedBy": "Test Verification Officer (officer)",
-        "meetingDate": "2026-10-15"
-      }
-    },
-    "TEST/7758/001": {
-      "1": {
-        "meetingNumber": 1,
-        "attended": true,
-        "markedAt": "2026-10-16T06:48:57.761Z",
+        "markedAt": "2026-10-16T07:43:53.374Z",
         "markedBy": "Test Verification Officer (officer)",
         "meetingDate": "2026-10-15"
       }
